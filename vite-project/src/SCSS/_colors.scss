@@ -1,173 +1,139 @@
-
-/* ===============================
-   FONT WEIGHT SYSTEM
-   =============================== */
-
-:root {
-  --fw-thin: 100;
-  --fw-extralight: 200;
-  --fw-light: 300;
-  --fw-regular: 400;
-  --fw-medium: 500;
-  --fw-semibold: 600;
-  --fw-bold: 700;
-  --fw-extrabold: 800;
-  --fw-black: 900;
-}
-
-/* SCSS Font Weight Variables for dynamic usage */
-$fw-thin: var(--fw-thin);
-$fw-extralight: var(--fw-extralight);
-$fw-light: var(--fw-light);
-$fw-regular: var(--fw-regular);
-$fw-medium: var(--fw-medium);
-$fw-semibold: var(--fw-semibold);
-$fw-bold: var(--fw-bold);
-$fw-extrabold: var(--fw-extrabold);
-$fw-black: var(--fw-black);
-
-/* Font Weight Utility Classes */
-.fw-100 { font-weight: var(--fw-thin); }
-.fw-200 { font-weight: var(--fw-extralight); }
-.fw-300 { font-weight: var(--fw-light); }
-.fw-400 { font-weight: var(--fw-regular); }
-.fw-500 { font-weight: var(--fw-medium); }
-.fw-600 { font-weight: var(--fw-semibold); }
-.fw-700 { font-weight: var(--fw-bold); }
-.fw-800 { font-weight: var(--fw-extrabold); }
-.fw-900 { font-weight: var(--fw-black); }
 /* =====================
    BASE BACKGROUNDS
    ===================== */
-$bg-app: #121212;
-$bg-surface: #1e1f20;
-$bg-surface-alt: #202124;
-$bg-hover: #2a2b2e;
-$bg-active: #303134;
-$bg-elevated: #242526;
+$bg-app: #edf1f5;              // cooler neutral gray
+$bg-surface: #ffffff;
+$bg-surface-alt: #eef2f6;
+$bg-hover: #e4e9f0;
+$bg-active: #d9e0ea;
+$bg-elevated: #ffffff;
 
 /* =====================
    HEADER / TOP BAR
    ===================== */
-$header-bg: #202124;
-$search-bg: #303134;
-$search-focus-bg: #3c4043;
+$header-bg: #ffffff;
+$search-bg: #eef2f6;
+$search-focus-bg: #e0e6ee;
 
 /* =====================
    SIDEBAR
    ===================== */
-$sidebar-bg: #1b1c1d;
-$sidebar-hover: #2a2b2e;
-$sidebar-active: #3c4043;
+$sidebar-bg: #f2f5f9;
+$sidebar-hover: #e4e9f0;
+$sidebar-active: #d9e0ea;
 
 /* =====================
    AUTH (LOGIN / SIGNUP)
    ===================== */
-$auth-card-bg: #0E0E0E;
-$auth-bg: #1E201F;
-$auth-input-bg: #2a2b2e;
-$auth-input-focus: #3c4043;
+$auth-card-bg: #ffffff;
+$auth-bg: #edf1f5;
+$auth-input-bg: #eef2f6;
+$auth-input-focus: #e0e6ee;
 
 /* =====================
    TEXT COLORS
    ===================== */
-$text-main: #e8eaed;
-$text-muted: #b0b3b8;
-$text-light: #9aa0a6;
-$text-disabled: #80868b;
-$text-dark: #202124;
+$text-main: #1e293b;
+$text-muted: #64748b;
+$text-light: #94a3b8;
+$text-disabled: #cbd5e1;
+$text-dark: #0f172a;
 
 /* =====================
    LINKS
    ===================== */
-$link: #8ab4f8;
-$link-hover: #a1c2fa;
+$link: #2563eb;
+$link-hover: #1d4ed8;
 
 /* =====================
    BUTTONS
    ===================== */
-$btn-bg: #8ab4f8;
-$btn-hover: #a1c2fa;
-$btn-text: #202124;
+$btn-bg: #2563eb;
+$btn-hover: #1d4ed8;
+$btn-text: #ffffff;
 
-$btn-secondary-bg: #3c4043;
-$btn-secondary-hover: #4a4d51;
+$btn-secondary-bg: #e4e9f0;
+$btn-secondary-hover: #d9e0ea;
 
 /* =====================
    INPUTS
    ===================== */
-$input-bg: #2a2b2e;
-$input-border: #5f6368;
-$input-text: #e8eaed;
-$input-placeholder: #9aa0a6;
+$input-bg: #ffffff;
+$input-border: #cbd5e1;
+$input-text: #1e293b;
+$input-placeholder: #f5f7fa;
 
 /* =====================
    MAIL LIST
    ===================== */
-$mail-unread-bg: #202124;
+$mail-unread-bg: #eef2f6;
 $mail-read-bg: transparent;
-$mail-hover-bg: #2a2b2e;
-$mail-selected-bg: #3c4043;
+$mail-hover-bg: #e4e9f0;
+$mail-selected-bg: #d9e0ea;
 
 /* =====================
    COMPOSE WINDOW
    ===================== */
-$compose-bg: #1f1f1f;
-$compose-header-bg: #202124;
-$compose-footer-bg: #202124;
-$compose-border: #3c4043;
+$compose-bg: #ffffff;
+$compose-header-bg: #eef2f6;
+$compose-footer-bg: #eef2f6;
+$compose-border: #cbd5e1;
 
 $compose-input-bg: transparent;
-$compose-input-text: #e8eaed;
-$compose-placeholder: #9aa0a6;
+$compose-input-text: #1e293b;
+$compose-placeholder: #94a3b8;
 
-$editor-bg: #1f1f1f;
-$editor-text: #e8eaed;
+$editor-bg: #ffffff;
+$editor-text: #1e293b;
 
 /* =====================
    SEND / ACTION ICONS
    ===================== */
-$icon: #9aa0a6;
-$icon-hover: #e8eaed;
-$icon-active: #8ab4f8;
+$icon: #64748b;
+$icon-hover: #1e293b;
+$icon-active: #2563eb;
 
 /* =====================
    POPUPS / SNACKBARS
    ===================== */
-$popup-bg: #1f1f1f;
-$popup-border: #3c4043;
+$popup-bg: #ffffff;
+$popup-border: #cbd5e1;
 
-$popup-success-bg: #1e3a2f;
-$popup-success-text: #81c995;
+/* Success – cool green */
+$popup-success-bg: #ecfdf5;
+$popup-success-text: #047857;
 
-$popup-error-bg: #3b1d1d;
-$popup-error-text: #f28b82;
+/* Error – neutral red (NO pink) */
+$popup-error-bg: #fef2f2;
+$popup-error-text: #991b1b;
 
-$popup-info-bg: #1f2937;
-$popup-info-text: #8ab4f8;
+/* Info – cool blue */
+$popup-info-bg: #eff6ff;
+$popup-info-text: #1d4ed8;
 
-$popup-warning-bg: #3a2f1c;
-$popup-warning-text: #fdd663;
+/* Warning – neutral amber (reduced warmth) */
+$popup-warning-bg: #fefce8;
+$popup-warning-text: #854d0e;
 
 /* =====================
    STATUS COLORS
    ===================== */
-$success: #81c995;
-$error: #f28b82;
-$warning: #fdd663;
+$success: #047857;
+$error: #991b1b;
+$warning: #854d0e;
 
 /* =====================
    BORDERS
    ===================== */
-$border: #3c4043;
-$border-light: #5f6368;
+$border: #cbd5e1;
+$border-light: #e2e8f0;
 
 /* =====================
    SHADOWS (ELEVATION)
    ===================== */
-$shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
-$shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
-$shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.6);
+$shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.05);
+$shadow-md: 0 6px 16px rgba(15, 23, 42, 0.08);
+$shadow-lg: 0 12px 32px rgba(15, 23, 42, 0.12);
 
 /* =====================
    TRANSITIONS
@@ -175,7 +141,3 @@ $shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.6);
 $transition-fast: 0.15s ease;
 $transition-normal: 0.25s ease;
 $default-transition: 0.3s ease;
-
-
-
-

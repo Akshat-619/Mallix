@@ -1,6 +1,6 @@
 import React from 'react'
 import './Login.css'
-import logo from '../../assets/google_logo.png'
+import logo from '../../assets/logo_icon.png'
 const Login = () => {
   return (
     <div className="Login">
@@ -33,9 +33,36 @@ const Login = () => {
 
             <div className=' footer d-flex justify-content-end gap-4 align-items-center  '>
 
-              <div className="createBtn">
-                <a href="">Create Account</a>
-              </div>
+           <div className="dropdown createBtn">
+  <button
+    className="btn btn-link p-0"
+    type="button"
+    data-bs-toggle="dropdown"
+    aria-expanded="false"
+  >
+    Create account
+  </button>
+
+  <ul className="dropdown-menu mt-3">
+    <li>
+      <a className="dropdown-item" href="#">
+        For my personal use
+      </a>
+    </li>
+    <li>
+      <a className="dropdown-item" href="#">
+        For my child
+      </a>
+    </li>
+    <li>
+      <a className="dropdown-item" href="#">
+        For work or my business
+      </a>
+    </li>
+  </ul>
+</div>
+
+
 
               <div>
                 <button className="btn nextBtn m-0" type="submit">

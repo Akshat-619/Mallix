@@ -25,7 +25,7 @@ form input.form-control {
     color: $input-text !important;
 
     &::placeholder {
-        color: $input-placeholder;
+        color: $input-text;
     }
 
     &:focus {
@@ -90,17 +90,54 @@ form input.form-control {
 }    
 }
 
-.createBtn a{
-    color: $link;
-    font-size: 14px;
-    text-decoration: none;
-    transition: $default-transition;
-    padding: 10px 10px;
-    
-    &:hover{
-        
-        border-radius: 30px;
-        background-color:rgba($btn-secondary-hover, 0.4);
-    }
-}
 
+/* =====================
+   CREATE ACCOUNT – TEXT-LOOK DROPDOWN
+   ===================== */
+
+.createBtn {
+  .btn-link {
+    color: $link;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 0;
+    line-height: 1.2;
+
+    &:hover,
+    &:focus {
+      color: $link;
+      text-decoration: none;
+    }
+
+    &:active {
+      color: $link-hover;
+    }
+  }
+
+  .dropdown-menu {
+    background-color: $popup-bg;
+    border: 1px solid $border-light;
+    border-radius: 12px;
+    padding: 6px 0;
+    min-width: 260px;
+    box-shadow: $shadow-lg;
+    margin-top: 8px;
+  }
+
+  .dropdown-item {
+    color: $text-main;
+    padding: 12px 16px;
+    font-size: 14px;
+    transition: background-color $transition-fast;
+
+    &:hover,
+    &:focus {
+      background-color: $bg-hover;
+      color: $text-dark;
+    }
+
+    &:active {
+      background-color: $bg-active;
+    }
+  }
+}

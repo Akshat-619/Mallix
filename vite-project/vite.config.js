@@ -10,4 +10,9 @@ export default defineConfig({
       },
     }),
   ],
+  base: '/gmail-clone/',
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+  },
 })
