@@ -1,0 +1,101 @@
+/* ===============================
+   FONT WEIGHT SYSTEM
+   =============================== */
+:root {
+  --fw-thin: 100;
+  --fw-extralight: 200;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+  --fw-black: 900;
+}
+
+/* SCSS Font Weight Variables for dynamic usage */
+/* Font Weight Utility Classes */
+.fw-thin {
+  font-weight: var(--fw-thin);
+}
+
+.fw-extralight {
+  font-weight: var(--fw-extralight);
+}
+
+.fw-light {
+  font-weight: var(--fw-light);
+}
+
+.fw-regular {
+  font-weight: var(--fw-regular);
+}
+
+.fw-medium {
+  font-weight: var(--fw-medium);
+}
+
+.fw-semibold {
+  font-weight: var(--fw-semibold);
+}
+
+.fw-bold {
+  font-weight: var(--fw-bold);
+}
+
+.fw-extrabold {
+  font-weight: var(--fw-extrabold);
+}
+
+.fw-black {
+  font-weight: var(--fw-black);
+}
+
+/* =====================
+   BASE BACKGROUNDS
+   ===================== */
+/* =====================
+   HEADER / TOP BAR
+   ===================== */
+/* =====================
+   SIDEBAR
+   ===================== */
+/* =====================
+   AUTH (LOGIN / SIGNUP)
+   ===================== */
+/* =====================
+   TEXT COLORS
+   ===================== */
+/* =====================
+   LINKS
+   ===================== */
+/* =====================
+   BUTTONS
+   ===================== */
+/* =====================
+   INPUTS
+   ===================== */
+/* =====================
+   MAIL LIST
+   ===================== */
+/* =====================
+   COMPOSE WINDOW
+   ===================== */
+/* =====================
+   SEND / ACTION ICONS
+   ===================== */
+/* =====================
+   POPUPS / SNACKBARS
+   ===================== */
+/* =====================
+   STATUS COLORS
+   ===================== */
+/* =====================
+   BORDERS
+   ===================== */
+/* =====================
+   SHADOWS (ELEVATION)
+   ===================== */
+/* =====================
+   TRANSITIONS
+   ===================== *//*# sourceMappingURL=colors.css.map */

@@ -1,0 +1,106 @@
+@use "../../SCSS/colors" as *;
+
+
+body {
+    background-color: $auth-bg;
+}
+
+.Login-container {
+    background-color: $auth-card-bg;
+    border-radius: 30px;
+}
+
+img {
+    width: 50px;
+}
+
+form input.form-control {
+ 
+    padding: 10px;
+    border: 1px solid;
+    border-color: $input-border;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    background: transparent;
+    color: $input-text !important;
+
+    &::placeholder {
+        color: $input-placeholder;
+    }
+
+    &:focus {
+        background-color: $auth-input-focus;
+    }
+}
+
+.nextBtn {
+    border-radius: 50px;
+    padding: 6px 22px;
+    margin-bottom: 10px;
+    background-color: $btn-bg;
+    color: $btn-text;
+    cursor: pointer;
+    
+    &:hover {
+        background-color: $btn-hover;
+    }
+}
+
+.signin-text {
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.signin-text h1 {
+    font-size: 2rem;
+    font-weight: 500;
+    color: $text-main;
+}
+
+.signin-text p {
+    font-size: 1rem;
+    font-weight: 400;
+    color: $text-main;
+}
+
+.forgotEmail a{
+    color: $link;
+    text-decoration: none;
+    font-size: 14px;
+    
+    &:hover{
+        color: $link-hover;
+
+    }
+}
+
+.note p{
+    font-size: 14px;
+    color: $text-main;
+
+ .noteLink{
+    color: $link;
+    text-decoration: none;
+ }   
+
+.noteLink:hover{
+    text-decoration: underline;
+}    
+}
+
+.createBtn a{
+    color: $link;
+    font-size: 14px;
+    text-decoration: none;
+    transition: $default-transition;
+    padding: 10px 10px;
+    
+    &:hover{
+        
+        border-radius: 30px;
+        background-color:rgba($btn-secondary-hover, 0.4);
+    }
+}
+

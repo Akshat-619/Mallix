@@ -1,0 +1,181 @@
+
+/* ===============================
+   FONT WEIGHT SYSTEM
+   =============================== */
+
+:root {
+  --fw-thin: 100;
+  --fw-extralight: 200;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+  --fw-black: 900;
+}
+
+/* SCSS Font Weight Variables for dynamic usage */
+$fw-thin: var(--fw-thin);
+$fw-extralight: var(--fw-extralight);
+$fw-light: var(--fw-light);
+$fw-regular: var(--fw-regular);
+$fw-medium: var(--fw-medium);
+$fw-semibold: var(--fw-semibold);
+$fw-bold: var(--fw-bold);
+$fw-extrabold: var(--fw-extrabold);
+$fw-black: var(--fw-black);
+
+/* Font Weight Utility Classes */
+.fw-100 { font-weight: var(--fw-thin); }
+.fw-200 { font-weight: var(--fw-extralight); }
+.fw-300 { font-weight: var(--fw-light); }
+.fw-400 { font-weight: var(--fw-regular); }
+.fw-500 { font-weight: var(--fw-medium); }
+.fw-600 { font-weight: var(--fw-semibold); }
+.fw-700 { font-weight: var(--fw-bold); }
+.fw-800 { font-weight: var(--fw-extrabold); }
+.fw-900 { font-weight: var(--fw-black); }
+/* =====================
+   BASE BACKGROUNDS
+   ===================== */
+$bg-app: #121212;
+$bg-surface: #1e1f20;
+$bg-surface-alt: #202124;
+$bg-hover: #2a2b2e;
+$bg-active: #303134;
+$bg-elevated: #242526;
+
+/* =====================
+   HEADER / TOP BAR
+   ===================== */
+$header-bg: #202124;
+$search-bg: #303134;
+$search-focus-bg: #3c4043;
+
+/* =====================
+   SIDEBAR
+   ===================== */
+$sidebar-bg: #1b1c1d;
+$sidebar-hover: #2a2b2e;
+$sidebar-active: #3c4043;
+
+/* =====================
+   AUTH (LOGIN / SIGNUP)
+   ===================== */
+$auth-card-bg: #0E0E0E;
+$auth-bg: #1E201F;
+$auth-input-bg: #2a2b2e;
+$auth-input-focus: #3c4043;
+
+/* =====================
+   TEXT COLORS
+   ===================== */
+$text-main: #e8eaed;
+$text-muted: #b0b3b8;
+$text-light: #9aa0a6;
+$text-disabled: #80868b;
+$text-dark: #202124;
+
+/* =====================
+   LINKS
+   ===================== */
+$link: #8ab4f8;
+$link-hover: #a1c2fa;
+
+/* =====================
+   BUTTONS
+   ===================== */
+$btn-bg: #8ab4f8;
+$btn-hover: #a1c2fa;
+$btn-text: #202124;
+
+$btn-secondary-bg: #3c4043;
+$btn-secondary-hover: #4a4d51;
+
+/* =====================
+   INPUTS
+   ===================== */
+$input-bg: #2a2b2e;
+$input-border: #5f6368;
+$input-text: #e8eaed;
+$input-placeholder: #9aa0a6;
+
+/* =====================
+   MAIL LIST
+   ===================== */
+$mail-unread-bg: #202124;
+$mail-read-bg: transparent;
+$mail-hover-bg: #2a2b2e;
+$mail-selected-bg: #3c4043;
+
+/* =====================
+   COMPOSE WINDOW
+   ===================== */
+$compose-bg: #1f1f1f;
+$compose-header-bg: #202124;
+$compose-footer-bg: #202124;
+$compose-border: #3c4043;
+
+$compose-input-bg: transparent;
+$compose-input-text: #e8eaed;
+$compose-placeholder: #9aa0a6;
+
+$editor-bg: #1f1f1f;
+$editor-text: #e8eaed;
+
+/* =====================
+   SEND / ACTION ICONS
+   ===================== */
+$icon: #9aa0a6;
+$icon-hover: #e8eaed;
+$icon-active: #8ab4f8;
+
+/* =====================
+   POPUPS / SNACKBARS
+   ===================== */
+$popup-bg: #1f1f1f;
+$popup-border: #3c4043;
+
+$popup-success-bg: #1e3a2f;
+$popup-success-text: #81c995;
+
+$popup-error-bg: #3b1d1d;
+$popup-error-text: #f28b82;
+
+$popup-info-bg: #1f2937;
+$popup-info-text: #8ab4f8;
+
+$popup-warning-bg: #3a2f1c;
+$popup-warning-text: #fdd663;
+
+/* =====================
+   STATUS COLORS
+   ===================== */
+$success: #81c995;
+$error: #f28b82;
+$warning: #fdd663;
+
+/* =====================
+   BORDERS
+   ===================== */
+$border: #3c4043;
+$border-light: #5f6368;
+
+/* =====================
+   SHADOWS (ELEVATION)
+   ===================== */
+$shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+$shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
+$shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.6);
+
+/* =====================
+   TRANSITIONS
+   ===================== */
+$transition-fast: 0.15s ease;
+$transition-normal: 0.25s ease;
+$default-transition: 0.3s ease;
+
+
+
+
