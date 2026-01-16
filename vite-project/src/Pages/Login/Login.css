@@ -53,15 +53,30 @@
   transition: border-color 0.15s ease;
 }
 .form-control::-moz-placeholder {
-  color: #6f7c78;
+  color: #e6ebe9;
 }
 .form-control::placeholder {
-  color: #6f7c78;
+  color: #e6ebe9;
 }
 .form-control:focus {
   background-color: #222a28;
   border-color: #10b981;
   box-shadow: none;
+  color: #e6ebe9;
+}
+
+/* Bootstrap Floating Labels Styling */
+.form-floating label {
+  color: #e6ebe9;
+}
+.form-floating .form-control:focus ~ label {
+  color: #e6ebe9;
+}
+.form-floating .form-control:not(:-moz-placeholder) ~ label {
+  color: #e6ebe9;
+}
+.form-floating .form-control:not(:placeholder-shown) ~ label {
+  color: #e6ebe9;
 }
 
 /* =====================
