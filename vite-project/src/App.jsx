@@ -2,7 +2,7 @@ import './App.css'
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Login from './Pages/Login/Login'
-import Password from './Pages/Signup/Password'
+import Password from './Pages/Password/Password'
 
 function App() {
 
