@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useLocation } from 'react-router-dom'
-import logo from '../../../assets/logo_icon.png'
+import logo from '../../../../assets/logo_icon.png'
 import './Password.scss'
 
 const Password = () => {
@@ -42,7 +42,7 @@ const Password = () => {
                 <img src={logo} alt="Mallix Logo" />
 
                 <div className="signin-text">
-                  <h1>Welcome back</h1>
+                  <h1>Enter Password</h1>
 
                   {email && (
                     <div className="userEmail mt-4">
