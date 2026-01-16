@@ -3,65 +3,9 @@
    LOGIN PAGE – MALLIX
    ====================================================== */
 /* =====================
-   BASE BACKGROUNDS
-   ===================== */
-/* =====================
-   HEADER / TOP BAR
-   ===================== */
-/* =====================
-   SIDEBAR
-   ===================== */
-/* =====================
-   AUTH (LOGIN / SIGNUP)
-   ===================== */
-/* =====================
-   TEXT COLORS
-   ===================== */
-/* =====================
-   LINKS
-   ===================== */
-/* =====================
-   BUTTONS
-   ===================== */
-/* =====================
-   INPUTS
-   ===================== */
-/* =====================
-   MAIL LIST
-   ===================== */
-/* =====================
-   COMPOSE WINDOW
-   ===================== */
-/* =====================
-   SEND / ACTION ICONS
-   ===================== */
-/* =====================
-   POPUPS / SNACKBARS
-   ===================== */
-/* Success – emerald */
-/* Error – deep red */
-/* Info – neutral teal */
-/* Warning – muted amber */
-/* =====================
-   STATUS COLORS
-   ===================== */
-/* =====================
-   BORDERS
-   ===================== */
-/* =====================
-   SHADOWS (ELEVATION)
-   ===================== */
-/* =====================
-   TRANSITIONS
-   ===================== */
-/* =====================
    PAGE WRAPPER
    ===================== */
-.Login {
-  background-color: #0e1211;
-  min-height: 100vh;
-}
-
+.Login,
 .login-page {
   background-color: #0e1211;
 }
@@ -71,8 +15,8 @@
    ===================== */
 .Login-container {
   background-color: #161c1a;
-  border-radius: 12px;
-  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.65);
+  border-radius: 14px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
 }
 
 /* =====================
@@ -83,6 +27,7 @@
 }
 .Login-left-content img {
   width: 80px;
+  margin-bottom: 16px;
 }
 .Login-left-content h1 {
   font-size: 2rem;
@@ -96,13 +41,6 @@
 }
 
 /* =====================
-   RIGHT CONTENT
-   ===================== */
-.Login-right-content {
-  color: #e6ebe9;
-}
-
-/* =====================
    INPUT FIELD
    ===================== */
 .form-control {
@@ -110,25 +48,24 @@
   color: #e6ebe9;
   border: 1px solid #2e3835;
   border-radius: 6px;
-  height: 44px;
+  height: 42px;
   font-size: 0.95rem;
   transition: border-color 0.15s ease;
 }
 .form-control::-moz-placeholder {
-  color: #e6ebe9;
+  color: #6f7c78;
 }
 .form-control::placeholder {
-  color: #e6ebe9;
+  color: #6f7c78;
 }
 .form-control:focus {
   background-color: #222a28;
   border-color: #10b981;
-  color: #e6ebe9;
   box-shadow: none;
 }
 
 /* =====================
-   ERROR STATE (GMAIL STYLE)
+   ERROR STATE
    ===================== */
 .input-error {
   border-color: #f87171 !important;
@@ -138,9 +75,11 @@
   border-color: #f87171 !important;
 }
 
-/* Error helper text */
 .error-text {
-  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
   font-size: 12px;
   font-weight: 400;
   color: #f87171;
@@ -160,6 +99,7 @@
 }
 
 .note {
+  margin-top: 40px;
   font-size: 0.8rem;
   color: #9aa5a1;
   line-height: 1.5;
@@ -175,13 +115,15 @@
 }
 
 /* =====================
-   FOOTER ACTIONS
+   FOOTER
    ===================== */
 .footer {
   margin-top: 32px;
 }
 
-/* Create account dropdown */
+/* =====================
+   DROPDOWN
+   ===================== */
 .createBtn .btn-link {
   color: #34d399;
   font-weight: 500;
@@ -192,29 +134,35 @@
   text-decoration: underline;
 }
 .createBtn .dropdown-menu {
+  margin-top: 6px;
+  padding: 6px;
+  border-radius: 8px;
   background-color: #181e1d;
   border: 1px solid #2e3835;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
 }
 .createBtn .dropdown-menu .dropdown-item {
   color: #e6ebe9;
   font-size: 0.85rem;
+  padding: 8px 12px;
+  border-radius: 6px;
 }
 .createBtn .dropdown-menu .dropdown-item:hover {
   background-color: #222a28;
 }
 
 /* =====================
-   CONTINUE BUTTON
+   BUTTON
    ===================== */
 .nextBtn {
   background-color: #10b981;
   color: #06281f;
-  border: none;
   border-radius: 6px;
-  padding: 8px 20px;
+  height: 36px;
+  padding: 0 20px;
+  font-size: 0.85rem;
   font-weight: 600;
-  transition: background-color 0.15s ease;
+  border: none;
 }
 .nextBtn:hover {
   background-color: #059669;
@@ -227,9 +175,6 @@
    RESPONSIVE
    ===================== */
 @media (max-width: 991px) {
-  .Login-container {
-    padding: 32px 24px;
-  }
   .Login-left-content {
     text-align: center;
     margin-bottom: 32px;

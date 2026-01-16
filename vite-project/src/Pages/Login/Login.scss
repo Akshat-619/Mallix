@@ -2,17 +2,36 @@
    LOGIN PAGE – MALLIX
    ====================================================== */
 
-@import "../../SCSS/colors";
+// Temporary variable definition to bypass import issue
+$auth-bg: #0e1211;
+$auth-card-bg: #161c1a;
+$auth-input-bg: #1c2321;
+$auth-input-focus: #222a28;
+$text-main: #e6ebe9;
+$text-muted: #9aa5a1;
+$text-dark: #f8faf9;
+$link: #34d399;
+$link-hover: #10b981;
+$btn-bg: #10b981;
+$btn-hover: #059669;
+$btn-text: #06281f;
+$input-text: #e6ebe9;
+$input-placeholder: #6f7c78;
+$input-border: #2e3835;
+$border: #2e3835;
+$error: #f87171;
+$popup-bg: #181e1d;
+$popup-border: #2e3835;
+$bg-hover: #222a28;
+$shadow-md: 0 10px 24px rgba(0, 0, 0, 0.5);
+$shadow-lg: 0 18px 44px rgba(0, 0, 0, 0.65);
+$transition-fast: 0.15s ease;
 
 /* =====================
    PAGE WRAPPER
    ===================== */
 
-.Login {
-  background-color: $auth-bg;
-  min-height: 100vh;
-}
-
+.Login,
 .login-page {
   background-color: $auth-bg;
 }
@@ -23,8 +42,8 @@
 
 .Login-container {
   background-color: $auth-card-bg;
-  border-radius: 12px;
-  box-shadow: $shadow-lg;
+  border-radius: 14px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
 }
 
 /* =====================
@@ -36,6 +55,7 @@
 
   img {
     width: 80px;
+    margin-bottom: 16px;
   }
 
   h1 {
@@ -52,14 +72,6 @@
 }
 
 /* =====================
-   RIGHT CONTENT
-   ===================== */
-
-.Login-right-content {
-  color: $text-main;
-}
-
-/* =====================
    INPUT FIELD
    ===================== */
 
@@ -68,24 +80,24 @@
   color: $input-text;
   border: 1px solid $input-border;
   border-radius: 6px;
-  height: 44px;
+  height: 42px;
   font-size: 0.95rem;
   transition: border-color $transition-fast;
 
   &::placeholder {
-    color: $input-text;
+    
+    color: $input-placeholder;
   }
 
   &:focus {
     background-color: $auth-input-focus;
     border-color: $btn-bg;
-    color: $input-text;
     box-shadow: none;
   }
 }
 
 /* =====================
-   ERROR STATE (GMAIL STYLE)
+   ERROR STATE
    ===================== */
 
 .input-error {
@@ -96,10 +108,12 @@
   border-color: $error !important;
 }
 
-/* Error helper text */
 .error-text {
-  margin-top: 6px;
-  font-size:12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  font-size: 12px;
   font-weight: 400;
   color: $error;
 }
@@ -120,6 +134,7 @@
 }
 
 .note {
+  margin-top: 40px;
   font-size: 0.8rem;
   color: $text-muted;
   line-height: 1.5;
@@ -137,14 +152,17 @@
 }
 
 /* =====================
-   FOOTER ACTIONS
+   FOOTER
    ===================== */
 
 .footer {
   margin-top: 32px;
 }
 
-/* Create account dropdown */
+/* =====================
+   DROPDOWN
+   ===================== */
+
 .createBtn {
   .btn-link {
     color: $link;
@@ -158,13 +176,18 @@
   }
 
   .dropdown-menu {
+    margin-top: 6px;
+    padding: 6px;
+    border-radius: 8px;
     background-color: $popup-bg;
-    border: 1px solid $popup-border;
-    box-shadow: $shadow-md;
+    border: 1px solid $border;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
 
     .dropdown-item {
       color: $text-main;
       font-size: 0.85rem;
+      padding: 8px 12px;
+      border-radius: 6px;
 
       &:hover {
         background-color: $bg-hover;
@@ -174,17 +197,18 @@
 }
 
 /* =====================
-   CONTINUE BUTTON
+   BUTTON
    ===================== */
 
 .nextBtn {
   background-color: $btn-bg;
   color: $btn-text;
-  border: none;
   border-radius: 6px;
-  padding: 8px 20px;
+  height: 36px;
+  padding: 0 20px;
+  font-size: 0.85rem;
   font-weight: 600;
-  transition: background-color $transition-fast;
+  border: none;
 
   &:hover {
     background-color: $btn-hover;
@@ -200,10 +224,6 @@
    ===================== */
 
 @media (max-width: 991px) {
-  .Login-container {
-    padding: 32px 24px;
-  }
-
   .Login-left-content {
     text-align: center;
     margin-bottom: 32px;

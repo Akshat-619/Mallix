@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
-import './Login.css'
+import { useNavigate } from 'react-router-dom'
+import './Login.scss'
 import logo from '../../assets/logo_icon.png'
 
 const Login = () => {
   const [email, setEmail] = useState('')
   const [error, setError] = useState('')
+  const navigate = useNavigate()
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -15,7 +17,8 @@ const Login = () => {
     }
 
     setError('')
-    // continue login logic
+    // Navigate to password page
+    navigate('/password')
   }
 
   return (
@@ -26,7 +29,7 @@ const Login = () => {
 
             <div className="col-lg-6 col-md-12">
               <div className="Login-left-content d-flex flex-column justify-content-center">
-                <img className="h-auto mb-3" src={logo} alt="Mallix Logo" />
+                <img src={logo} alt="Mallix Logo" />
 
                 <div className="signin-text">
                   <h1>Welcome back</h1>
@@ -46,23 +49,22 @@ const Login = () => {
                     value={email}
                     onChange={(e) => {
                       setEmail(e.target.value)
-                      setError('')
+                      if (error) setError('')
                     }}
                   />
 
                   {error && (
-                    <div className="error-text text-danger  mt-2">
-                      <i className="bi bi-exclamation-circle"></i> {error}
+                    <div className="error-text">
+                      <i className="bi bi-exclamation-circle"></i>
+                      <span>{error}</span>
                     </div>
                   )}
 
-                  <div className="forgotEmail mt-2">
-                    <a className="fw-500" href="#">
-                      Trouble signing in?
-                    </a>
+                  <div className="forgotEmail text-end mt-2">
+                    <a href="#">Trouble signing in?</a>
                   </div>
 
-                  <div className="note mt-5">
+                  <div className="note">
                     <p>
                       Accessing Mallix on a public device? Use private mode to stay secure.
                       <a className="noteLink" href="#">
@@ -72,7 +74,7 @@ const Login = () => {
                   </div>
 
                   <div className="footer d-flex justify-content-end gap-4 align-items-center">
-                    <div className="dropdown createBtn">
+                    <div className="dropdown createBtn mt-4">
                       <button
                         className="btn btn-link p-0"
                         type="button"
@@ -81,7 +83,7 @@ const Login = () => {
                         Create account
                       </button>
 
-                      <ul className="dropdown-menu mt-3">
+                      <ul className="dropdown-menu">
                         <li><a className="dropdown-item" href="#">For my personal use</a></li>
                         <li><a className="dropdown-item" href="#">For my child</a></li>
                         <li><a className="dropdown-item" href="#">For work or my business</a></li>
