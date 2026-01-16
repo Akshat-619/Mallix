@@ -67,35 +67,33 @@ const Password = () => {
 
                 <form onSubmit={handleSubmit} noValidate>
 
-                  <div className="form-floating position-relative">
-                    <input
-                      type={showPassword ? 'text' : 'password'}
-                      className={`form-control ${error ? 'input-error' : ''}`}
-                      id="floatingPassword"
-                      placeholder="Password"
-                      value={password}
-                      onChange={(e) => {
-                        setPassword(e.target.value)
-                        if (error) setError('')
-                      }}
-                      autoComplete="current-password"
-                    />
-                    <label htmlFor="floatingPassword">Password</label>
-                    {password && (
-                      <button
-                        type="button"
-                        className="password-toggle-btn position-absolute"
-                        style={{ right: '10px', top: '50%', transform: 'translateY(-50%)' }}
-                        onClick={() => setShowPassword(!showPassword)}
-                      >
-                        <i
-                          className={`bi ${
-                            showPassword ? 'bi-eye-slash' : 'bi-eye'
-                          }`}
-                        ></i>
-                      </button>
-                    )}
-                  </div>
+                  <div className="form-floating position-relative mb-3">
+  <input
+    type={showPassword ? 'text' : 'password'}
+    className={`form-control ${error ? 'input-error' : ''}`}
+    id="floatingPassword"
+    placeholder="Password"
+    value={password}
+    onChange={(e) => {
+      setPassword(e.target.value)
+      if (error) setError('')
+    }}
+    autoComplete="current-password"
+  />
+
+  <label htmlFor="floatingPassword">Password</label>
+
+  {password && (
+    <button
+      type="button"
+      className="password-toggle-btn"
+      onClick={() => setShowPassword(!showPassword)}
+    >
+      <i className={`bi ${showPassword ? 'bi-eye-slash' : 'bi-eye'}`} />
+    </button>
+  )}
+</div>
+
 
                   {error && (
                     <div className="error-text">

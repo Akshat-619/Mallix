@@ -43,6 +43,9 @@
 /* =====================
    INPUT FIELD
    ===================== */
+/* =====================
+   INPUT FIELD
+   ===================== */
 .form-control {
   background-color: #1c2321;
   color: #e6ebe9;
@@ -51,12 +54,19 @@
   height: 42px;
   font-size: 0.95rem;
   transition: border-color 0.15s ease;
+  /* Hide browser password reveal icons */
 }
 .form-control::-moz-placeholder {
-  color: #e6ebe9;
+  color: transparent;
 }
 .form-control::placeholder {
-  color: #e6ebe9;
+  color: transparent;
+}
+.form-control::-webkit-credentials-auto-fill-button, .form-control::-webkit-reveal-password-button {
+  display: none;
+}
+.form-control::-ms-reveal {
+  display: none;
 }
 .form-control:focus {
   background-color: #222a28;
@@ -65,18 +75,41 @@
   color: #e6ebe9;
 }
 
-/* Bootstrap Floating Labels Styling */
+/* =====================
+   FLOATING LABEL
+   ===================== */
+.form-floating {
+  position: relative;
+  /* Float state */
+}
 .form-floating label {
   color: #e6ebe9;
+  background: transparent !important;
+  transition: all 0.2s ease;
 }
-.form-floating .form-control:focus ~ label {
-  color: #e6ebe9;
+.form-floating label::after {
+  background: transparent !important;
 }
 .form-floating .form-control:not(:-moz-placeholder) ~ label {
+  transform: scale(0.85) translateY(-1.6rem) translateX(0.15rem);
+  padding: 0 0.35rem;
   color: #e6ebe9;
 }
+.form-floating .form-control:focus ~ label,
 .form-floating .form-control:not(:placeholder-shown) ~ label {
+  transform: scale(0.85) translateY(-1.6rem) translateX(0.15rem);
+  padding: 0 0.35rem;
   color: #e6ebe9;
+}
+
+.form-floating > .form-control:not(:-moz-placeholder) {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.form-floating > .form-control:not(:placeholder-shown) {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
 }
 
 /* =====================

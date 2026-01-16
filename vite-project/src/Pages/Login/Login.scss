@@ -75,6 +75,9 @@ $transition-fast: 0.15s ease;
    INPUT FIELD
    ===================== */
 
+/* =====================
+   INPUT FIELD
+   ===================== */
 .form-control {
   background-color: $auth-input-bg;
   color: $text-main;
@@ -85,8 +88,17 @@ $transition-fast: 0.15s ease;
   transition: border-color $transition-fast;
 
   &::placeholder {
-    
-    color: $text-main;
+    color: transparent;
+  }
+
+  /* Hide browser password reveal icons */
+  &::-webkit-credentials-auto-fill-button,
+  &::-webkit-reveal-password-button {
+    display: none;
+  }
+
+  &::-ms-reveal {
+    display: none;
   }
 
   &:focus {
@@ -97,21 +109,38 @@ $transition-fast: 0.15s ease;
   }
 }
 
-/* Bootstrap Floating Labels Styling */
+/* =====================
+   FLOATING LABEL
+   ===================== */
 .form-floating {
+  position: relative;
+
   label {
     color: $text-main;
+    background: transparent !important;
+
+    transition: all 0.2s ease;
   }
 
-  .form-control {
-    &:focus ~ label {
-      color: $text-main;
-    }
-    
-    &:not(:placeholder-shown) ~ label {
-      color: $text-main;
-    }
+  label::after {
+    background: transparent !important;
   }
+
+  /* Float state */
+  .form-control:focus ~ label,
+  .form-control:not(:placeholder-shown) ~ label {
+    transform: scale(0.85) translateY(-1.6rem) translateX(0.15rem);
+    padding: 0 0.35rem;            // ✅ padding ONLY when floated
+    color: $text-main;
+  }
+}
+
+.form-floating>.form-control:not(:placeholder-shown)
+
+ 
+ {
+    padding-top: 0 !important;
+   padding-bottom: 0 !important; 
 }
 
 /* =====================

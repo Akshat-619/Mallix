@@ -54,7 +54,9 @@ const Login = () => {
                         if (error) setError('')
                       }}
                     />
-                    <label htmlFor="floatingInput">Email address</label>
+                    <label htmlFor="floatingInput">
+                       <p>Email address</p>
+                       </label>
                   </div>
 
                   {error && (
