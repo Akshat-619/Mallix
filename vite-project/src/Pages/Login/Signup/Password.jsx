@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import logo from '../../../assets/logo_icon.png'
 import './Password.scss'
 
@@ -6,6 +7,10 @@ const Password = () => {
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
   const [showPassword, setShowPassword] = useState(false)
+  const location = useLocation()
+  
+  // Get email from navigation state or query params
+  const email = location.state?.email || 'akshat.sharma@mallix.ai'
 
   const handleSubmit = (e) => {
     e.preventDefault()

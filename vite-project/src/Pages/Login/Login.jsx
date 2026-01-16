@@ -17,8 +17,8 @@ const Login = () => {
     }
 
     setError('')
-    // Navigate to password page
-    navigate('/password')
+    // Navigate to password page with email state
+    navigate('/password', { state: { email } })
   }
 
   return (

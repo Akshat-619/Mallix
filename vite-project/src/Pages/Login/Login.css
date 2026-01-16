@@ -164,11 +164,8 @@
   font-weight: 600;
   border: none;
 }
-.nextBtn:hover {
+.nextBtn:hover, .nextBtn:focus {
   background-color: #059669;
-}
-.nextBtn:focus {
-  box-shadow: none;
 }
 
 /* =====================

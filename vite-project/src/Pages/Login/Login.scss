@@ -210,13 +210,15 @@ $transition-fast: 0.15s ease;
   font-weight: 600;
   border: none;
 
-  &:hover {
+  &:hover,
+  &:focus
+  
+   {
     background-color: $btn-hover;
   }
 
-  &:focus {
-    box-shadow: none;
-  }
+ 
+
 }
 
 /* =====================
