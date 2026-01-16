@@ -9,8 +9,8 @@ const Password = () => {
   const [showPassword, setShowPassword] = useState(false)
   const location = useLocation()
   
-  // Get email from navigation state or query params
-  const email = location.state?.email || 'akshat.sharma@mallix.ai'
+  // Get email from navigation state
+  const email = location.state?.email
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -44,13 +44,15 @@ const Password = () => {
                 <div className="signin-text">
                   <h1>Welcome back</h1>
 
-                  <div className="userEmail mt-4">
-                    <span>
-                      <i className="bi bi-person-circle me-2"></i>
-                      akshat.sharma@mallix.ai
-                      <i className="bi bi-caret-down-fill ms-2"></i>
-                    </span>
-                  </div>
+                  {email && (
+                    <div className="userEmail mt-4">
+                      <span>
+                        <i className="bi bi-person-circle me-2"></i>
+                        {email}
+                        <i className="bi bi-caret-down-fill ms-2"></i>
+                      </span>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
