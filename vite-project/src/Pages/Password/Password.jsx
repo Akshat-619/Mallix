@@ -67,10 +67,11 @@ const Password = () => {
 
                 <form onSubmit={handleSubmit} noValidate>
 
-                  <div className="password-input-wrapper">
+                  <div className="form-floating position-relative">
                     <input
-                      className={`form-control ${error ? 'input-error' : ''}`}
                       type={showPassword ? 'text' : 'password'}
+                      className={`form-control ${error ? 'input-error' : ''}`}
+                      id="floatingPassword"
                       placeholder="Password"
                       value={password}
                       onChange={(e) => {
@@ -79,11 +80,12 @@ const Password = () => {
                       }}
                       autoComplete="current-password"
                     />
-
+                    <label htmlFor="floatingPassword">Password</label>
                     {password && (
                       <button
                         type="button"
-                        className="password-toggle-btn"
+                        className="password-toggle-btn position-absolute"
+                        style={{ right: '10px', top: '50%', transform: 'translateY(-50%)' }}
                         onClick={() => setShowPassword(!showPassword)}
                       >
                         <i

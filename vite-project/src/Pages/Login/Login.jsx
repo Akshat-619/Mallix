@@ -42,16 +42,20 @@ const Login = () => {
               <div className="Login-right-content d-flex flex-column justify-content-center">
                 <form onSubmit={handleSubmit} noValidate>
 
-                  <input
-                    className={`form-control mt-5 ${error ? 'input-error' : ''}`}
-                    type="email"
-                    placeholder="Email address"
-                    value={email}
-                    onChange={(e) => {
-                      setEmail(e.target.value)
-                      if (error) setError('')
-                    }}
-                  />
+                  <div className="form-floating mb-3">
+                    <input
+                      type="email"
+                      className={`form-control ${error ? 'input-error' : ''}`}
+                      id="floatingInput"
+                      placeholder="name@example.com"
+                      value={email}
+                      onChange={(e) => {
+                        setEmail(e.target.value)
+                        if (error) setError('')
+                      }}
+                    />
+                    <label htmlFor="floatingInput">Email address</label>
+                  </div>
 
                   {error && (
                     <div className="error-text">
