@@ -1,143 +1,211 @@
-@use "../../SCSS/colors" as *;
+/* ======================================================
+   LOGIN PAGE – MALLIX
+   ====================================================== */
 
-
-body {
-    background-color: $auth-bg;
-}
-
-.Login-container {
-    background-color: $auth-card-bg;
-    border-radius: 30px;
-}
-
-img {
-    width: 50px;
-}
-
-form input.form-control {
- 
-    padding: 10px;
-    border: 1px solid;
-    border-color: $input-border;
-    border-radius: 4px;
-    margin-bottom: 10px;
-    background: transparent;
-    color: $input-text !important;
-
-    &::placeholder {
-        color: $input-text;
-    }
-
-    &:focus {
-        background-color: $auth-input-focus;
-    }
-}
-
-.nextBtn {
-    border-radius: 50px;
-    padding: 6px 22px;
-    margin-bottom: 10px;
-    background-color: $btn-bg;
-    color: $btn-text;
-    cursor: pointer;
-    
-    &:hover {
-        background-color: $btn-hover;
-    }
-}
-
-.signin-text {
-
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.signin-text h1 {
-    font-size: 2rem;
-    font-weight: 500;
-    color: $text-main;
-}
-
-.signin-text p {
-    font-size: 1rem;
-    font-weight: 400;
-    color: $text-main;
-}
-
-.forgotEmail a{
-    color: $link;
-    text-decoration: none;
-    font-size: 14px;
-    
-    &:hover{
-        color: $link-hover;
-
-    }
-}
-
-.note p{
-    font-size: 14px;
-    color: $text-main;
-
- .noteLink{
-    color: $link;
-    text-decoration: none;
- }   
-
-.noteLink:hover{
-    text-decoration: underline;
-}    
-}
-
+@import "../../SCSS/colors";
 
 /* =====================
-   CREATE ACCOUNT – TEXT-LOOK DROPDOWN
+   PAGE WRAPPER
    ===================== */
 
+.Login {
+  background-color: $auth-bg;
+  min-height: 100vh;
+}
+
+.login-page {
+  background-color: $auth-bg;
+}
+
+/* =====================
+   LOGIN CONTAINER
+   ===================== */
+
+.Login-container {
+  background-color: $auth-card-bg;
+  border-radius: 12px;
+  box-shadow: $shadow-lg;
+}
+
+/* =====================
+   LEFT CONTENT
+   ===================== */
+
+.Login-left-content {
+  color: $text-main;
+
+  img {
+    width: 80px;
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: $text-dark;
+    margin-bottom: 6px;
+  }
+
+  p {
+    font-size: 0.95rem;
+    color: $text-muted;
+  }
+}
+
+/* =====================
+   RIGHT CONTENT
+   ===================== */
+
+.Login-right-content {
+  color: $text-main;
+}
+
+/* =====================
+   INPUT FIELD
+   ===================== */
+
+.form-control {
+  background-color: $auth-input-bg;
+  color: $input-text;
+  border: 1px solid $input-border;
+  border-radius: 6px;
+  height: 44px;
+  font-size: 0.95rem;
+  transition: border-color $transition-fast;
+
+  &::placeholder {
+    color: $input-text;
+  }
+
+  &:focus {
+    background-color: $auth-input-focus;
+    border-color: $btn-bg;
+    color: $input-text;
+    box-shadow: none;
+  }
+}
+
+/* =====================
+   ERROR STATE (GMAIL STYLE)
+   ===================== */
+
+.input-error {
+  border-color: $error !important;
+}
+
+.form-control.input-error:focus {
+  border-color: $error !important;
+}
+
+/* Error helper text */
+.error-text {
+  margin-top: 6px;
+  font-size:12px;
+  font-weight: 400;
+  color: $error;
+}
+
+/* =====================
+   LINKS
+   ===================== */
+
+.forgotEmail a {
+  font-size: 0.85rem;
+  color: $link;
+  text-decoration: none;
+
+  &:hover {
+    color: $link-hover;
+    text-decoration: underline;
+  }
+}
+
+.note {
+  font-size: 0.8rem;
+  color: $text-muted;
+  line-height: 1.5;
+
+  .noteLink {
+    color: $link;
+    margin-left: 4px;
+    text-decoration: none;
+
+    &:hover {
+      color: $link-hover;
+      text-decoration: underline;
+    }
+  }
+}
+
+/* =====================
+   FOOTER ACTIONS
+   ===================== */
+
+.footer {
+  margin-top: 32px;
+}
+
+/* Create account dropdown */
 .createBtn {
   .btn-link {
     color: $link;
     font-weight: 500;
     text-decoration: none;
-    padding: 0;
-    line-height: 1.2;
 
-    &:hover,
-    &:focus {
-      color: $link;
-      text-decoration: none;
-    }
-
-    &:active {
+    &:hover {
       color: $link-hover;
+      text-decoration: underline;
     }
   }
 
   .dropdown-menu {
     background-color: $popup-bg;
-    border: 1px solid $border-light;
-    border-radius: 12px;
-    padding: 6px 0;
-    min-width: 260px;
-    box-shadow: $shadow-lg;
-    margin-top: 8px;
+    border: 1px solid $popup-border;
+    box-shadow: $shadow-md;
+
+    .dropdown-item {
+      color: $text-main;
+      font-size: 0.85rem;
+
+      &:hover {
+        background-color: $bg-hover;
+      }
+    }
+  }
+}
+
+/* =====================
+   CONTINUE BUTTON
+   ===================== */
+
+.nextBtn {
+  background-color: $btn-bg;
+  color: $btn-text;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 20px;
+  font-weight: 600;
+  transition: background-color $transition-fast;
+
+  &:hover {
+    background-color: $btn-hover;
   }
 
-  .dropdown-item {
-    color: $text-main;
-    padding: 12px 16px;
-    font-size: 14px;
-    transition: background-color $transition-fast;
+  &:focus {
+    box-shadow: none;
+  }
+}
 
-    &:hover,
-    &:focus {
-      background-color: $bg-hover;
-      color: $text-dark;
-    }
+/* =====================
+   RESPONSIVE
+   ===================== */
 
-    &:active {
-      background-color: $bg-active;
-    }
+@media (max-width: 991px) {
+  .Login-container {
+    padding: 32px 24px;
+  }
+
+  .Login-left-content {
+    text-align: center;
+    margin-bottom: 32px;
   }
 }

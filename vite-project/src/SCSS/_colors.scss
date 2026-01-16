@@ -1,139 +1,139 @@
 /* =====================
    BASE BACKGROUNDS
    ===================== */
-$bg-app: #edf1f5;              // cooler neutral gray
-$bg-surface: #ffffff;
-$bg-surface-alt: #eef2f6;
-$bg-hover: #e4e9f0;
-$bg-active: #d9e0ea;
-$bg-elevated: #ffffff;
+$bg-app: #0e1211;              // graphite black
+$bg-surface: #161c1a;
+$bg-surface-alt: #1c2321;
+$bg-hover: #222a28;
+$bg-active: #293332;
+$bg-elevated: #181e1d;
 
 /* =====================
    HEADER / TOP BAR
    ===================== */
-$header-bg: #ffffff;
-$search-bg: #eef2f6;
-$search-focus-bg: #e0e6ee;
+$header-bg: #161c1a;
+$search-bg: #1c2321;
+$search-focus-bg: #222a28;
 
 /* =====================
    SIDEBAR
    ===================== */
-$sidebar-bg: #f2f5f9;
-$sidebar-hover: #e4e9f0;
-$sidebar-active: #d9e0ea;
+$sidebar-bg: #141a18;
+$sidebar-hover: #222a28;
+$sidebar-active: #293332;
 
 /* =====================
    AUTH (LOGIN / SIGNUP)
    ===================== */
-$auth-card-bg: #ffffff;
-$auth-bg: #edf1f5;
-$auth-input-bg: #eef2f6;
-$auth-input-focus: #e0e6ee;
+$auth-card-bg: #161c1a;
+$auth-bg: #0e1211;
+$auth-input-bg: #1c2321;
+$auth-input-focus: #222a28;
 
 /* =====================
    TEXT COLORS
    ===================== */
-$text-main: #1e293b;
-$text-muted: #64748b;
-$text-light: #94a3b8;
-$text-disabled: #cbd5e1;
-$text-dark: #0f172a;
+$text-main: #e6ebe9;
+$text-muted: #9aa5a1;
+$text-light: #6f7c78;
+$text-disabled: #4a5451;
+$text-dark: #f8faf9;
 
 /* =====================
    LINKS
    ===================== */
-$link: #2563eb;
-$link-hover: #1d4ed8;
+$link: #34d399;          // emerald
+$link-hover: #10b981;
 
 /* =====================
    BUTTONS
    ===================== */
-$btn-bg: #2563eb;
-$btn-hover: #1d4ed8;
-$btn-text: #ffffff;
+$btn-bg: #10b981;
+$btn-hover: #059669;
+$btn-text: #06281f;
 
-$btn-secondary-bg: #e4e9f0;
-$btn-secondary-hover: #d9e0ea;
+$btn-secondary-bg: #222a28;
+$btn-secondary-hover: #293332;
 
 /* =====================
    INPUTS
    ===================== */
-$input-bg: #ffffff;
-$input-border: #cbd5e1;
-$input-text: #1e293b;
-$input-placeholder: #f5f7fa;
+$input-bg: #161c1a;
+$input-border: #2e3835;
+$input-text: #e6ebe9;
+$input-placeholder: #6f7c78;
 
 /* =====================
    MAIL LIST
    ===================== */
-$mail-unread-bg: #eef2f6;
+$mail-unread-bg: #1c2321;
 $mail-read-bg: transparent;
-$mail-hover-bg: #e4e9f0;
-$mail-selected-bg: #d9e0ea;
+$mail-hover-bg: #222a28;
+$mail-selected-bg: #293332;
 
 /* =====================
    COMPOSE WINDOW
    ===================== */
-$compose-bg: #ffffff;
-$compose-header-bg: #eef2f6;
-$compose-footer-bg: #eef2f6;
-$compose-border: #cbd5e1;
+$compose-bg: #161c1a;
+$compose-header-bg: #1c2321;
+$compose-footer-bg: #1c2321;
+$compose-border: #2e3835;
 
 $compose-input-bg: transparent;
-$compose-input-text: #1e293b;
-$compose-placeholder: #94a3b8;
+$compose-input-text: #e6ebe9;
+$compose-placeholder: #6f7c78;
 
-$editor-bg: #ffffff;
-$editor-text: #1e293b;
+$editor-bg: #161c1a;
+$editor-text: #e6ebe9;
 
 /* =====================
    SEND / ACTION ICONS
    ===================== */
-$icon: #64748b;
-$icon-hover: #1e293b;
-$icon-active: #2563eb;
+$icon: #9aa5a1;
+$icon-hover: #e6ebe9;
+$icon-active: #10b981;
 
 /* =====================
    POPUPS / SNACKBARS
    ===================== */
-$popup-bg: #ffffff;
-$popup-border: #cbd5e1;
+$popup-bg: #181e1d;
+$popup-border: #2e3835;
 
-/* Success – cool green */
-$popup-success-bg: #ecfdf5;
-$popup-success-text: #047857;
+/* Success – emerald */
+$popup-success-bg: #06281f;
+$popup-success-text: #34d399;
 
-/* Error – neutral red (NO pink) */
-$popup-error-bg: #fef2f2;
-$popup-error-text: #991b1b;
+/* Error – deep red */
+$popup-error-bg: #3a0d0d;
+$popup-error-text: #f87171;
 
-/* Info – cool blue */
-$popup-info-bg: #eff6ff;
-$popup-info-text: #1d4ed8;
+/* Info – neutral teal */
+$popup-info-bg: #0a2624;
+$popup-info-text: #2dd4bf;
 
-/* Warning – neutral amber (reduced warmth) */
-$popup-warning-bg: #fefce8;
-$popup-warning-text: #854d0e;
+/* Warning – muted amber */
+$popup-warning-bg: #32260b;
+$popup-warning-text: #fbbf24;
 
 /* =====================
    STATUS COLORS
    ===================== */
-$success: #047857;
-$error: #991b1b;
-$warning: #854d0e;
+$success: #34d399;
+$error: #f87171;
+$warning: #fbbf24;
 
 /* =====================
    BORDERS
    ===================== */
-$border: #cbd5e1;
-$border-light: #e2e8f0;
+$border: #2e3835;
+$border-light: #222a28;
 
 /* =====================
    SHADOWS (ELEVATION)
    ===================== */
-$shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.05);
-$shadow-md: 0 6px 16px rgba(15, 23, 42, 0.08);
-$shadow-lg: 0 12px 32px rgba(15, 23, 42, 0.12);
+$shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+$shadow-md: 0 10px 24px rgba(0, 0, 0, 0.5);
+$shadow-lg: 0 18px 44px rgba(0, 0, 0, 0.65);
 
 /* =====================
    TRANSITIONS

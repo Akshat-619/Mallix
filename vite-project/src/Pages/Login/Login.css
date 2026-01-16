@@ -1,4 +1,7 @@
 @charset "UTF-8";
+/* ======================================================
+   LOGIN PAGE – MALLIX
+   ====================================================== */
 /* =====================
    BASE BACKGROUNDS
    ===================== */
@@ -35,10 +38,10 @@
 /* =====================
    POPUPS / SNACKBARS
    ===================== */
-/* Success – cool green */
-/* Error – neutral red (NO pink) */
-/* Info – cool blue */
-/* Warning – neutral amber (reduced warmth) */
+/* Success – emerald */
+/* Error – deep red */
+/* Info – neutral teal */
+/* Warning – muted amber */
 /* =====================
    STATUS COLORS
    ===================== */
@@ -51,125 +54,184 @@
 /* =====================
    TRANSITIONS
    ===================== */
-body {
-  background-color: #edf1f5;
+/* =====================
+   PAGE WRAPPER
+   ===================== */
+.Login {
+  background-color: #0e1211;
+  min-height: 100vh;
 }
 
+.login-page {
+  background-color: #0e1211;
+}
+
+/* =====================
+   LOGIN CONTAINER
+   ===================== */
 .Login-container {
-  background-color: #ffffff;
-  border-radius: 30px;
+  background-color: #161c1a;
+  border-radius: 12px;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.65);
 }
 
-img {
-  width: 50px;
+/* =====================
+   LEFT CONTENT
+   ===================== */
+.Login-left-content {
+  color: #e6ebe9;
 }
-
-form input.form-control {
-  padding: 10px;
-  border: 1px solid;
-  border-color: #cbd5e1;
-  border-radius: 4px;
-  margin-bottom: 10px;
-  background: transparent;
-  color: #1e293b !important;
+.Login-left-content img {
+  width: 80px;
 }
-form input.form-control::-moz-placeholder {
-  color: #1e293b;
-}
-form input.form-control::placeholder {
-  color: #1e293b;
-}
-form input.form-control:focus {
-  background-color: #e0e6ee;
-}
-
-.nextBtn {
-  border-radius: 50px;
-  padding: 6px 22px;
-  margin-bottom: 10px;
-  background-color: #2563eb;
-  color: #ffffff;
-  cursor: pointer;
-}
-.nextBtn:hover {
-  background-color: #1d4ed8;
-}
-
-.signin-text {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.signin-text h1 {
+.Login-left-content h1 {
   font-size: 2rem;
-  font-weight: 500;
-  color: #1e293b;
+  font-weight: 600;
+  color: #f8faf9;
+  margin-bottom: 6px;
+}
+.Login-left-content p {
+  font-size: 0.95rem;
+  color: #9aa5a1;
 }
 
-.signin-text p {
-  font-size: 1rem;
+/* =====================
+   RIGHT CONTENT
+   ===================== */
+.Login-right-content {
+  color: #e6ebe9;
+}
+
+/* =====================
+   INPUT FIELD
+   ===================== */
+.form-control {
+  background-color: #1c2321;
+  color: #e6ebe9;
+  border: 1px solid #2e3835;
+  border-radius: 6px;
+  height: 44px;
+  font-size: 0.95rem;
+  transition: border-color 0.15s ease;
+}
+.form-control::-moz-placeholder {
+  color: #e6ebe9;
+}
+.form-control::placeholder {
+  color: #e6ebe9;
+}
+.form-control:focus {
+  background-color: #222a28;
+  border-color: #10b981;
+  color: #e6ebe9;
+  box-shadow: none;
+}
+
+/* =====================
+   ERROR STATE (GMAIL STYLE)
+   ===================== */
+.input-error {
+  border-color: #f87171 !important;
+}
+
+.form-control.input-error:focus {
+  border-color: #f87171 !important;
+}
+
+/* Error helper text */
+.error-text {
+  margin-top: 6px;
+  font-size: 12px;
   font-weight: 400;
-  color: #1e293b;
+  color: #f87171;
 }
 
+/* =====================
+   LINKS
+   ===================== */
 .forgotEmail a {
-  color: #2563eb;
+  font-size: 0.85rem;
+  color: #34d399;
   text-decoration: none;
-  font-size: 14px;
 }
 .forgotEmail a:hover {
-  color: #1d4ed8;
+  color: #10b981;
+  text-decoration: underline;
 }
 
-.note p {
-  font-size: 14px;
-  color: #1e293b;
+.note {
+  font-size: 0.8rem;
+  color: #9aa5a1;
+  line-height: 1.5;
 }
-.note p .noteLink {
-  color: #2563eb;
+.note .noteLink {
+  color: #34d399;
+  margin-left: 4px;
   text-decoration: none;
 }
-.note p .noteLink:hover {
+.note .noteLink:hover {
+  color: #10b981;
   text-decoration: underline;
 }
 
 /* =====================
-   CREATE ACCOUNT – TEXT-LOOK DROPDOWN
+   FOOTER ACTIONS
    ===================== */
+.footer {
+  margin-top: 32px;
+}
+
+/* Create account dropdown */
 .createBtn .btn-link {
-  color: #2563eb;
+  color: #34d399;
   font-weight: 500;
   text-decoration: none;
-  padding: 0;
-  line-height: 1.2;
 }
-.createBtn .btn-link:hover, .createBtn .btn-link:focus {
-  color: #2563eb;
-  text-decoration: none;
-}
-.createBtn .btn-link:active {
-  color: #1d4ed8;
+.createBtn .btn-link:hover {
+  color: #10b981;
+  text-decoration: underline;
 }
 .createBtn .dropdown-menu {
-  background-color: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  padding: 6px 0;
-  min-width: 260px;
-  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.12);
-  margin-top: 8px;
+  background-color: #181e1d;
+  border: 1px solid #2e3835;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5);
 }
-.createBtn .dropdown-item {
-  color: #1e293b;
-  padding: 12px 16px;
-  font-size: 14px;
+.createBtn .dropdown-menu .dropdown-item {
+  color: #e6ebe9;
+  font-size: 0.85rem;
+}
+.createBtn .dropdown-menu .dropdown-item:hover {
+  background-color: #222a28;
+}
+
+/* =====================
+   CONTINUE BUTTON
+   ===================== */
+.nextBtn {
+  background-color: #10b981;
+  color: #06281f;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 20px;
+  font-weight: 600;
   transition: background-color 0.15s ease;
 }
-.createBtn .dropdown-item:hover, .createBtn .dropdown-item:focus {
-  background-color: #e4e9f0;
-  color: #0f172a;
+.nextBtn:hover {
+  background-color: #059669;
 }
-.createBtn .dropdown-item:active {
-  background-color: #d9e0ea;
+.nextBtn:focus {
+  box-shadow: none;
+}
+
+/* =====================
+   RESPONSIVE
+   ===================== */
+@media (max-width: 991px) {
+  .Login-container {
+    padding: 32px 24px;
+  }
+  .Login-left-content {
+    text-align: center;
+    margin-bottom: 32px;
+  }
 }/*# sourceMappingURL=Login.css.map */
