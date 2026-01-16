@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useLocation } from 'react-router-dom'
-import logo from '../../../../../assets/logo_icon.png'
+import logo from '@/assets/logo_icon.png'
 import './Password.scss'
 
 const Password = () => {
