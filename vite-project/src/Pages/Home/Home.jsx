@@ -23,11 +23,11 @@ const Home = () => {
                 </div>
                   
                   <div className="Topbar-icons">
-                    <i className="bi bi-question-circle-fill" title="Support"></i>
-                    <i className="bi bi-gear-fill" title="Settings"></i>
-                    <i className="bi bi-alexa" title="Try Alexa"></i>
-                    <i className="bi bi-grid-3x3-gap-fill" title="Mallix Apps"></i>
-                    <i className="bi bi-person-circle" title="Profile"></i>
+                    <i className="bi bi-question-circle-fill" data-tooltip="Support"></i>
+                    <i className="bi bi-gear-fill" data-tooltip="Settings"></i>
+                    <i className="bi bi-alexa" data-tooltip="Try Alexa"></i>
+                    <i className="bi bi-grid-3x3-gap-fill" data-tooltip="Mallix Apps"></i>
+                    <i className="bi bi-person-circle" data-tooltip="Profile"></i>
                   </div>
              </section>
         </div>

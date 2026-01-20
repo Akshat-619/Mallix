@@ -84,11 +84,11 @@
 }
 
 /* Tooltip styling */
-[title] {
+[data-tooltip] {
     position: relative;
     
     &::after {
-        content: attr(title);
+        content: attr(data-tooltip);
         position: absolute;
         top: 100%;
         left: 50%;
@@ -108,5 +108,10 @@
     
     &:hover::after {
         opacity: 1;
+    }
+    
+    &.bi-alexa::after {
+        animation: none !important;
+        transform: translateX(-50%) !important;
     }
 }
