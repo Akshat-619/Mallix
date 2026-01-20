@@ -67,8 +67,23 @@
         &:hover {
             color: $text-dark;
         }
+    }
+    
+    .alexa-wrapper {
+        position: relative;
+        cursor: pointer;
         
-        &.bi-alexa:hover {
+        i {
+            font-size: 20px;
+            color: $text-main;
+            transition: color $transition-fast;
+            
+            &:hover {
+                color: $text-dark;
+            }
+        }
+        
+        &:hover i {
             animation: rotateAlexa 0.8s ease-in-out;
         }
     }
@@ -108,10 +123,5 @@
     
     &:hover::after {
         opacity: 1;
-    }
-    
-    &.bi-alexa::after {
-        animation: none !important;
-        transform: translateX(-50%) !important;
     }
 }

@@ -25,7 +25,9 @@ const Home = () => {
                   <div className="Topbar-icons">
                     <i className="bi bi-question-circle-fill" data-tooltip="Support"></i>
                     <i className="bi bi-gear-fill" data-tooltip="Settings"></i>
-                    <i className="bi bi-alexa" data-tooltip="Try Alexa"></i>
+                    <div className="alexa-wrapper" data-tooltip="Try Alexa">
+                        <i className="bi bi-alexa"></i>
+                    </div>
                     <i className="bi bi-grid-3x3-gap-fill" data-tooltip="Mallix Apps"></i>
                     <i className="bi bi-person-circle" data-tooltip="Profile"></i>
                   </div>

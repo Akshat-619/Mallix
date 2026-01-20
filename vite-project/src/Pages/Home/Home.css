@@ -117,7 +117,19 @@
 .Topbar-icons i:hover {
   color: #f8faf9;
 }
-.Topbar-icons i.bi-alexa:hover {
+.Topbar-icons .alexa-wrapper {
+  position: relative;
+  cursor: pointer;
+}
+.Topbar-icons .alexa-wrapper i {
+  font-size: 20px;
+  color: #e6ebe9;
+  transition: color 0.15s ease;
+}
+.Topbar-icons .alexa-wrapper i:hover {
+  color: #f8faf9;
+}
+.Topbar-icons .alexa-wrapper:hover i {
   animation: rotateAlexa 0.8s ease-in-out;
 }
 
@@ -153,8 +165,4 @@
 }
 [data-tooltip]:hover::after {
   opacity: 1;
-}
-[data-tooltip].bi-alexa::after {
-  animation: none !important;
-  transform: translateX(-50%) !important;
 }/*# sourceMappingURL=Home.css.map */
