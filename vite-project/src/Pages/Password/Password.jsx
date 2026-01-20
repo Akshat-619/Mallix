@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import logo from '@/assets/logo_icon.png'
 import './Password.scss'
 
@@ -8,6 +8,7 @@ const Password = () => {
   const [error, setError] = useState('')
   const [showPassword, setShowPassword] = useState(false)
   const location = useLocation()
+  const navigate = useNavigate()
   
   // Get email from navigation state
   const email = location.state?.email
@@ -25,9 +26,9 @@ const Password = () => {
       return
     }
 
-
     setError('')
-   
+    // Navigate to home page after successful login
+    navigate('/home')
   }
 
   return (
@@ -106,14 +107,13 @@ const Password = () => {
                     <a href="#">Forgot password?</a>
                   </div>
 
-                 
-
-                </form>
-                   <div className="footer d-flex justify-content-end">
+                  <div className="footer d-flex justify-content-end">
                     <button className="btn nextBtn" type="submit">
                       Login
                     </button>
                   </div>
+
+                </form>
               </div>
             </div>
 

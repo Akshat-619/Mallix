@@ -59,14 +59,14 @@
    ===================== */
 .Login,
 .login-page {
-  background-color: #0e1211;
+  background-color: #0f0f0f;
 }
 
 /* =====================
    LOGIN CONTAINER
    ===================== */
 .Login-container {
-  background-color: #161c1a;
+  background-color: #1a1a1a;
   border-radius: 14px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
 }
@@ -99,7 +99,7 @@
    INPUT FIELD
    ===================== */
 .form-control {
-  background-color: #1c2321;
+  background-color: #141a18;
   color: #e6ebe9;
   border: 1px solid #2e3835;
   border-radius: 6px;
@@ -121,7 +121,7 @@
   display: none;
 }
 .form-control:focus {
-  background-color: #222a28;
+  background-color: #1a1a1a;
   border-color: #10b981;
   box-shadow: none;
   color: #e6ebe9;
@@ -248,7 +248,7 @@
   border-radius: 6px;
 }
 .createBtn .dropdown-menu .dropdown-item:hover {
-  background-color: #222a28;
+  background-color: #1a1a1a;
 }
 
 /* =====================

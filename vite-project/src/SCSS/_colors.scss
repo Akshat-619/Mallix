@@ -1,34 +1,34 @@
 /* =====================
    BASE BACKGROUNDS
    ===================== */
-$bg-app: #0e1211;              // graphite black
-$bg-surface: #161c1a;
-$bg-surface-alt: #1c2321;
-$bg-hover: #222a28;
-$bg-active: #293332;
-$bg-elevated: #181e1d;
+$bg-app: #0f0f0f;              // Deep black background
+$bg-surface: #1a1a1a;          // Dark surface
+$bg-surface-alt: #141a18;        // Darker surface
+$bg-hover: #1a1a1a;            // Dark hover (same as surface)
+$bg-active: #2d2d2d;            // Darkest active
+$bg-elevated: #181e1d;          // Slightly elevated dark
 
 /* =====================
    HEADER / TOP BAR
    ===================== */
-$header-bg: #161c1a;
-$search-bg: #1c2321;
-$search-focus-bg: #222a28;
+$header-bg: #1a1a1a;          // Dark surface (matching drawer)
+$search-bg: #141a18;           // Darker surface (matching drawer)
+$search-focus-bg: #1a1a1a;      // Dark surface (matching drawer)
 
 /* =====================
    SIDEBAR
    ===================== */
-$sidebar-bg: #141a18;
-$sidebar-hover: #222a28;
-$sidebar-active: #293332;
+$sidebar-bg: #141a18;           // Darker surface (matching drawer)
+$sidebar-hover: #1a1a1a;        // Dark hover (same as surface)
+$sidebar-active: #2d2d2d;        // Darkest active (matching drawer)
 
 /* =====================
    AUTH (LOGIN / SIGNUP)
    ===================== */
-$auth-card-bg: #161c1a;
-$auth-bg: #0e1211;
-$auth-input-bg: #1c2321;
-$auth-input-focus: #222a28;
+$auth-card-bg: #1a1a1a;          // Dark surface (matching drawer)
+$auth-bg: #0f0f0f;              // Deep black background (matching main)
+$auth-input-bg: #141a18;           // Darker surface (matching drawer)
+$auth-input-focus: #1a1a1a;      // Dark surface (matching drawer)
 
 /* =====================
    TEXT COLORS
@@ -48,9 +48,9 @@ $link-hover: #10b981;
 /* =====================
    BUTTONS
    ===================== */
-$btn-bg: #10b981;
-$btn-hover: #059669;
-$btn-text: #06281f;
+$btn-bg: #10b981;              // Emerald green (from drawer accent)
+$btn-hover: #059669;            // Darker emerald
+$btn-text: #06281f;              // Dark emerald text
 
 $btn-secondary-bg: #222a28;
 $btn-secondary-hover: #293332;

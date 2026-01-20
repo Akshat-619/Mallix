@@ -1,0 +1,180 @@
+.gmail-sidebar {
+  width: 280px;
+  background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
+  border-right: 1px solid #dee2e6;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.gmail-sidebar .sidebar-content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 20px;
+}
+.gmail-sidebar .compose-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 24px;
+  background: linear-gradient(135deg, #4285f4 0%, #1a73e8 100%);
+  color: white;
+  border: none;
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(66, 133, 244, 0.3);
+}
+.gmail-sidebar .compose-btn:hover {
+  background: linear-gradient(135deg, #1a73e8 0%, #4285f4 100%);
+  box-shadow: 0 4px 8px rgba(66, 133, 244, 0.4);
+  transform: translateY(-1px);
+}
+.gmail-sidebar .compose-btn i {
+  font-size: 18px;
+}
+.gmail-sidebar .compose-btn span {
+  flex: 1;
+  text-align: left;
+}
+.gmail-sidebar .sidebar-nav .nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.gmail-sidebar .sidebar-nav .nav-list .nav-item {
+  margin-bottom: 2px;
+}
+.gmail-sidebar .sidebar-nav .nav-list .nav-item .nav-link {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 12px 16px;
+  color: #5f6368;
+  text-decoration: none;
+  border-radius: 0 16px 16px 0;
+  transition: all 0.2s ease;
+  position: relative;
+}
+.gmail-sidebar .sidebar-nav .nav-list .nav-item .nav-link:hover {
+  background: rgba(66, 133, 244, 0.08);
+  color: #1a73e8;
+}
+.gmail-sidebar .sidebar-nav .nav-list .nav-item .nav-link i {
+  font-size: 18px;
+  width: 20px;
+  text-align: center;
+}
+.gmail-sidebar .sidebar-nav .nav-list .nav-item .nav-link .nav-text {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 400;
+}
+.gmail-sidebar .sidebar-nav .nav-list .nav-item .nav-link .nav-count {
+  background: rgba(0, 0, 0, 0.1);
+  color: #5f6368;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  min-width: 20px;
+  text-align: center;
+}
+.gmail-sidebar .sidebar-nav .nav-list .nav-item.active .nav-link {
+  background: #e8f0fe;
+  color: #1a73e8;
+  font-weight: 500;
+}
+.gmail-sidebar .sidebar-nav .nav-list .nav-item.active .nav-link .nav-count {
+  background: #1a73e8;
+  color: white;
+}
+.gmail-sidebar .sidebar-section {
+  margin-top: 8px;
+}
+.gmail-sidebar .sidebar-section .section-title {
+  color: #5f6368;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+  padding: 0 16px;
+}
+.gmail-sidebar .sidebar-section .section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  padding: 0 16px;
+}
+.gmail-sidebar .sidebar-section .section-header .section-title {
+  margin: 0;
+  padding: 0;
+}
+.gmail-sidebar .sidebar-section .section-header .add-label-btn {
+  background: none;
+  border: none;
+  color: #5f6368;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+.gmail-sidebar .sidebar-section .section-header .add-label-btn:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: #1a73e8;
+}
+.gmail-sidebar .sidebar-section .section-header .add-label-btn i {
+  font-size: 14px;
+}
+.gmail-sidebar .sidebar-section .nav-list .nav-item .nav-link .label-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.gmail-sidebar .storage-info {
+  margin-top: auto;
+  padding: 16px;
+  border-top: 1px solid #e8eaed;
+}
+.gmail-sidebar .storage-info .storage-bar {
+  width: 100%;
+  height: 4px;
+  background: #e8eaed;
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+.gmail-sidebar .storage-info .storage-bar .storage-used {
+  height: 100%;
+  background: linear-gradient(90deg, #4285f4 0%, #34a853 100%);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+.gmail-sidebar .storage-info .storage-text span {
+  color: #5f6368;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .gmail-sidebar {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    z-index: 1040;
+    transition: left 0.3s ease;
+  }
+  .gmail-sidebar.show {
+    left: 0;
+  }
+}/*# sourceMappingURL=GmailSidebar.css.map */
