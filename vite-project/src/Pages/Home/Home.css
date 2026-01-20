@@ -119,25 +119,47 @@
 }
 .Topbar-icons .alexa-wrapper {
   position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
   cursor: pointer;
 }
-.Topbar-icons .alexa-wrapper i {
-  font-size: 20px;
-  color: #e6ebe9;
-  transition: color 0.15s ease;
-  display: inline-block;
+.Topbar-icons .alexa-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: conic-gradient(#00C6FF, #1A73E8, #6A11CB, #00C6FF);
+  filter: blur(3px);
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 0.35s ease, transform 0.35s ease;
 }
-.Topbar-icons .alexa-wrapper:hover i {
-  color: #f8faf9;
-  animation: rotateAlexa 0.8s ease-in-out;
+.Topbar-icons .alexa-wrapper:hover::before {
+  opacity: 1;
+  transform: scale(1);
+  animation: alexa-spin 2.2s linear infinite;
+}
+.Topbar-icons .alexa-wrapper i {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle at top, #101a2f, #050912);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: #00C6FF;
+  box-shadow: inset 0 0 6px rgba(0, 198, 255, 0.25), 0 0 6px rgba(0, 0, 0, 0.6);
+  transition: none;
 }
 
-@keyframes rotateAlexa {
-  from {
-    transform: rotate(0deg);
-  }
+/* Smooth spin */
+@keyframes alexa-spin {
   to {
-    transform: rotate(720deg); /* 2 full rotations (360° × 2 = 720°) */
+    transform: rotate(360deg) scale(1);
   }
 }
 /* Tooltip styling */
