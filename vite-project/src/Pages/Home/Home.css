@@ -119,12 +119,7 @@
 }
 .Topbar-icons .alexa-wrapper {
   position: relative;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
   cursor: pointer;
-  padding: 4px;
-  transition: all 0.35s ease;
 }
 .Topbar-icons .alexa-wrapper::before {
   content: "";
@@ -136,6 +131,7 @@
   opacity: 0;
   transform: scale(0.85);
   transition: opacity 0.35s ease, transform 0.35s ease;
+  z-index: -1;
 }
 .Topbar-icons .alexa-wrapper:hover::before {
   opacity: 1;
@@ -143,23 +139,26 @@
   animation: alexa-spin 2.2s linear infinite;
 }
 .Topbar-icons .alexa-wrapper i {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
+  font-size: 20px;
+  color: #e6ebe9;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  background: radial-gradient(circle at top, #101a2f, #050912);
+  background: radial-gradient(circle at center, #00F5FF, #0072FF, #8E2DE2);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
-  color: #00C6FF;
+  color: #ffffff;
+  opacity: 0;
+  transform: scale(0.8);
   box-shadow: inset 0 0 6px rgba(0, 198, 255, 0.25), 0 0 6px rgba(0, 0, 0, 0.6);
-  transition: all 0.35s ease;
 }
 .Topbar-icons .alexa-wrapper:hover i {
-  background: radial-gradient(circle at center, #00F5FF, #0072FF, #8E2DE2);
-  color: #ffffff;
+  opacity: 1;
+  transform: scale(1);
 }
 
 /* Smooth spin */
