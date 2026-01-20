@@ -9,6 +9,7 @@ import Home from './Pages/Home/Home'
 function App() {
 
   return (
+    <div className="App">
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -18,6 +19,7 @@ function App() {
         <Route path="*" element={<Home />} />
       </Routes>
     </BrowserRouter>
+    </div>
   )
 }
 

@@ -53,14 +53,6 @@
    ===================== */
 .Home {
   background-color: #0e1211;
-  min-height: 100vh;
-}
-
-.Topbar {
-  background-color: #161c1a;
-  padding: 12px 20px;
-  border-radius: 8px;
-  margin-bottom: 20px;
 }
 
 .logo img {
@@ -72,30 +64,4 @@
   font-weight: 400;
   color: #f8faf9;
   margin-left: 12px;
-}
-
-.input-group {
-  max-width: 400px;
-}
-.input-group .form-control {
-  background-color: #1c2321;
-  border: 1px solid #2e3835;
-  color: #e6ebe9;
-}
-.input-group .form-control::-moz-placeholder {
-  color: #9aa5a1;
-}
-.input-group .form-control::placeholder {
-  color: #9aa5a1;
-}
-.input-group .form-control:focus {
-  background-color: #222a28;
-  border-color: #10b981;
-  box-shadow: none;
-  color: #e6ebe9;
-}
-.input-group .input-group-text {
-  background-color: #1c2321;
-  border: 1px solid #2e3835;
-  color: #9aa5a1;
 }/*# sourceMappingURL=Home.css.map */

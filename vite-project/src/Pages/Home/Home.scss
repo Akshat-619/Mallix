@@ -2,14 +2,9 @@
 
 .Home{
     background-color: $bg-app;
-    min-height: 100vh;
 }
 
 .Topbar {
-    background-color: $header-bg;
-    padding: 12px 20px;
-    border-radius: 8px;
-    margin-bottom: 20px;
 }
 
 .logo img{
@@ -21,31 +16,4 @@
     font-weight: 400;
     color: $text-dark;
     margin-left: 12px;
-}
-
-.input-group {
-    max-width: 400px;
-    
-    .form-control {
-        background-color: $search-bg;
-        border: 1px solid $input-border;
-        color: $text-main;
-        
-        &::placeholder {
-            color: $text-muted;
-        }
-        
-        &:focus {
-            background-color: $search-focus-bg;
-            border-color: $btn-bg;
-            box-shadow: none;
-            color: $text-main;
-        }
-    }
-    
-    .input-group-text {
-        background-color: $search-bg;
-        border: 1px solid $input-border;
-        color: $text-muted;
-    }
 }
