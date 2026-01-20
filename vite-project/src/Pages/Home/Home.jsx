@@ -5,7 +5,7 @@ import './Home.scss'
 const Home = () => {
     return (
         <div className="Home p-2">
-            <section className="Topbar d-flex align-items-center justify-content-between">
+            <section className="Topbar d-flex align-items-center">
                 
                 <div className="d-flex align-items-center">
                     <div className="logo">
@@ -17,7 +17,7 @@ const Home = () => {
                 </div>
 
                 
-                <div className="input-group flex-nowrap">
+                <div className="input-group flex-nowrap mx-auto">
                     <input type="text" className="form-control" placeholder="Search" aria-label="Search" />
                     <span className="input-group-text" id="addon-wrapping"><i className="bi bi-search"></i></span>
                 </div>
