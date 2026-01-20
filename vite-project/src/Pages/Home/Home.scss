@@ -77,7 +77,7 @@
     &::after {
         content: attr(title);
         position: absolute;
-        bottom: 100%;
+        top: 100%;
         left: 50%;
         transform: translateX(-50%);
         background-color: $auth-input-bg;
@@ -90,7 +90,7 @@
         pointer-events: none;
         transition: opacity $transition-fast;
         z-index: 1000;
-        margin-bottom: 8px;
+        margin-top: 8px;
     }
     
     &:hover::after {

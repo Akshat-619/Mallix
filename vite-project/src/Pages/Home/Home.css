@@ -125,7 +125,7 @@
 [title]::after {
   content: attr(title);
   position: absolute;
-  bottom: 100%;
+  top: 100%;
   left: 50%;
   transform: translateX(-50%);
   background-color: #1c2321;
@@ -138,7 +138,7 @@
   pointer-events: none;
   transition: opacity 0.15s ease;
   z-index: 1000;
-  margin-bottom: 8px;
+  margin-top: 8px;
 }
 [title]:hover::after {
   opacity: 1;
