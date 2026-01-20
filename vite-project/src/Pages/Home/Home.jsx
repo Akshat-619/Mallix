@@ -22,7 +22,14 @@ const Home = () => {
                     <span className="input-group-text" id="addon-wrapping"><i className="bi bi-search"></i></span>
                 </div>
                   
-            </section>
+                  <div className="Topbar-icons">
+                    <i className="bi bi-question-circle-fill"></i>
+                    <i className="bi bi-gear-fill"></i>
+                    <i className="bi bi-alexa"></i>
+                    <i className="bi bi-grid-3x3-gap-fill"></i>
+                    <i className="bi bi-person-circle"></i>
+                  </div>
+             </section>
         </div>
     )
 }

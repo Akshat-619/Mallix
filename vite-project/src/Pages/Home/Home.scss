@@ -51,3 +51,21 @@
         color: $text-muted;
     }
 }
+
+.Topbar-icons {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-left: auto;
+    
+    i {
+        font-size: 20px;
+        color: $text-main;
+        cursor: pointer;
+        transition: color $transition-fast;
+        
+        &:hover {
+            color: $text-dark;
+        }
+    }
+}

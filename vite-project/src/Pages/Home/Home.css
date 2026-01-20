@@ -100,4 +100,20 @@
   background-color: #1c2321;
   border: 1px solid #2e3835;
   color: #9aa5a1;
+}
+
+.Topbar-icons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-left: auto;
+}
+.Topbar-icons i {
+  font-size: 20px;
+  color: #e6ebe9;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+.Topbar-icons i:hover {
+  color: #f8faf9;
 }/*# sourceMappingURL=Home.css.map */
