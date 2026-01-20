@@ -117,7 +117,18 @@
 .Topbar-icons i:hover {
   color: #f8faf9;
 }
+.Topbar-icons i.bi-alexa:hover {
+  animation: rotateAlexa 0.8s ease-in-out;
+}
 
+@keyframes rotateAlexa {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(720deg); /* 2 full rotations (360° × 2 = 720°) */
+  }
+}
 /* Tooltip styling */
 [title] {
   position: relative;
