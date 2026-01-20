@@ -1,5 +1,10 @@
-@use '../../SCSS/_colors.scss' as *;
+@use './SCSS/_colors.scss' as *;
+
+/* ======================================================
+   APP GLOBAL STYLES – MALLIX
+   ====================================================== */
 
 .App {
-    background-color: $bg-app;
+  background-color: $bg-app;
+  min-height: 100vh;
 }
