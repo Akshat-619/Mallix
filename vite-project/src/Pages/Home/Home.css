@@ -125,11 +125,10 @@
   font-size: 20px;
   color: #e6ebe9;
   transition: color 0.15s ease;
-}
-.Topbar-icons .alexa-wrapper i:hover {
-  color: #f8faf9;
+  display: inline-block;
 }
 .Topbar-icons .alexa-wrapper:hover i {
+  color: #f8faf9;
   animation: rotateAlexa 0.8s ease-in-out;
 }
 

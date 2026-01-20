@@ -77,13 +77,11 @@
             font-size: 20px;
             color: $text-main;
             transition: color $transition-fast;
-            
-            &:hover {
-                color: $text-dark;
-            }
+            display: inline-block;
         }
         
         &:hover i {
+            color: $text-dark;
             animation: rotateAlexa 0.8s ease-in-out;
         }
     }
