@@ -1,0 +1,87 @@
+/* =====================
+   SIDEBAR SPECIFIC COLORS
+   ===================== */
+
+/* Main Background Colors */
+$sidebar-bg-dark: #0a0a0a;
+$sidebar-bg-mid: #0d0d0d;
+$sidebar-bg-deep: #080808;
+
+/* Compose Button Colors */
+$compose-bg-static: rgba(255, 255, 255, 0.06);
+$compose-bg-hover: rgba(16, 185, 129, 0.12);
+$compose-text-static: rgba(255, 255, 255, 0.85);
+$compose-text-hover: rgba(16, 185, 129, 0.95);
+$compose-border-static: rgba(255, 255, 255, 0.08);
+$compose-border-hover: rgba(16, 185, 129, 0.2);
+
+/* Navigation Colors */
+$nav-text-static: rgba(255, 255, 255, 0.65);
+$nav-text-hover: rgba(16, 185, 129, 0.9);
+$nav-bg-hover: rgba(16, 185, 129, 0.08);
+$nav-border-hover: rgba(16, 185, 129, 0.15);
+$nav-bg-active: rgba(16, 185, 129, 0.12);
+$nav-border-active: rgba(16, 185, 129, 0.25);
+
+/* Icon Colors */
+$icon-static: rgba(255, 255, 255, 0.65);
+$icon-hover-sidebar: rgba(16, 185, 129, 0.9);
+$icon-blue-accent: rgba(16, 185, 129, 0.9);
+
+/* Categories Section Colors */
+$categories-title: rgba(255, 255, 255, 0.65);
+$categories-title-underline: rgba(16, 185, 129, 0.4);
+$categories-add-btn-static: rgba(255, 255, 255, 0.65);
+$categories-add-btn-hover: rgba(16, 185, 129, 0.9);
+$categories-add-btn-bg-hover: rgba(16, 185, 129, 0.15);
+$categories-count-bg: rgba(16, 185, 129, 0.15);
+$categories-count-text: rgba(16, 185, 129, 0.9);
+$categories-count-border: rgba(16, 185, 129, 0.2);
+$categories-bg-hover: rgba(16, 185, 129, 0.08);
+$categories-border-hover: rgba(16, 185, 129, 0.15);
+
+/* Labels Section Colors */
+$labels-bg-hover: rgba(16, 185, 129, 0.08);
+$labels-border-hover: rgba(16, 185, 129, 0.15);
+$labels-count-bg: rgba(16, 185, 129, 0.12);
+$labels-count-text: rgba(16, 185, 129, 0.9);
+$labels-count-border: rgba(16, 185, 129, 0.2);
+
+/* Storage Section Colors */
+$storage-border: rgba(255, 255, 255, 0.05);
+$storage-bg: rgba(255, 255, 255, 0.02);
+$storage-bar-bg: rgba(16, 185, 129, 0.08);
+$storage-bar-overlay: rgba(16, 185, 129, 0.15);
+$storage-used-gradient-start: rgba(16, 185, 129, 0.8);
+$storage-used-gradient-mid: rgba(16, 185, 129, 0.6);
+$storage-used-gradient-end: rgba(16, 185, 129, 0.8);
+$storage-used-shadow: rgba(16, 185, 129, 0.3);
+$storage-shimmer: rgba(16, 185, 129, 0.15);
+$storage-text-color: rgba(255, 255, 255, 0.65);
+
+/* Shadow Colors */
+$shadow-compose-static: rgba(0, 0, 0, 0.15);
+$shadow-compose-hover: rgba(0, 0, 0, 0.25);
+$shadow-nav-static: rgba(0, 0, 0, 0.1);
+$shadow-nav-hover: rgba(0, 0, 0, 0.12);
+$shadow-nav-active: rgba(0, 0, 0, 0.15);
+$shadow-categories-btn: rgba(16, 185, 129, 0.2);
+$shadow-labels-hover: rgba(16, 185, 129, 0.15);
+$shadow-storage: rgba(0, 0, 0, 0.08);
+
+/* Label Dot Colors */
+$label-dot-shadow: rgba(0, 0, 0, 0.2);
+$label-dot-shadow-hover: rgba(0, 0, 0, 0.25);
+
+/* Border Colors */
+$sidebar-border-light: rgba(255, 255, 255, 0.05);
+
+/* Spacing Values */
+$nav-item-gap: 8px;
+$nav-padding-static: 8px 14px;
+$nav-padding-categories: 8px 14px;
+$nav-padding-labels: 8px 14px;
+$sidebar-text-size: 13px;
+$sidebar-title-size: 13px;
+$sidebar-count-size: 13px;
+$sidebar-icon-size: 13px;

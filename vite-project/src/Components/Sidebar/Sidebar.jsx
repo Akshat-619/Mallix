@@ -1,19 +1,19 @@
 import React from 'react';
 import './Sidebar.scss';
 
-const Sidebar = () => {
+const Sidebar = ({ onComposeClick }) => {
     return (
         <aside className="sidebar">
             <div className="sidebar-content">
                 {/* Compose Button */}
-                <button className="compose-btn">
+                <button type="button" className="compose-btn" aria-label="Compose new email" onClick={onComposeClick}>
                     <i className="bi bi-pencil-square"></i>
                     <span>Compose</span>
                 </button>
 
                 {/* Navigation Menu */}
                 <nav className="sidebar-nav">
-                    <ul className="nav-list">
+                    <ul className="nav-list ">
                         <li className="nav-item active">
                             <a href="#" className="nav-link">
                                 <i className="bi bi-inbox"></i>
@@ -25,18 +25,21 @@ const Sidebar = () => {
                             <a href="#" className="nav-link">
                                 <i className="bi bi-star"></i>
                                 <span className="nav-text">Starred</span>
+                                <span className="nav-count">7</span>
                             </a>
                         </li>
                         <li className="nav-item">
                             <a href="#" className="nav-link">
                                 <i className="bi bi-clock"></i>
                                 <span className="nav-text">Snoozed</span>
+                                <span className="nav-count">5</span>
                             </a>
                         </li>
                         <li className="nav-item">
                             <a href="#" className="nav-link">
                                 <i className="bi bi-send"></i>
                                 <span className="nav-text">Sent</span>
+                                <span className="nav-count">156</span>
                             </a>
                         </li>
                         <li className="nav-item">
@@ -50,6 +53,7 @@ const Sidebar = () => {
                             <a href="#" className="nav-link">
                                 <i className="bi bi-tag"></i>
                                 <span className="nav-text">All Labels</span>
+                                <span className="nav-count">89</span>
                             </a>
                         </li>
                     </ul>
@@ -58,7 +62,7 @@ const Sidebar = () => {
                 {/* Categories Section */}
                 <div className="sidebar-section">
                     <h6 className="section-title">Categories</h6>
-                    <ul className="nav-list">
+                    <ul className="nav-list list-unstyled">
                         <li className="nav-item">
                             <a href="#" className="nav-link">
                                 <i className="bi bi-chat-dots"></i>
@@ -91,6 +95,7 @@ const Sidebar = () => {
                             <a href="#" className="nav-link">
                                 <i className="bi bi-trash"></i>
                                 <span className="nav-text">Trash</span>
+                                <span className="nav-count">11</span>
                             </a>
                         </li>
                     </ul>
@@ -104,7 +109,7 @@ const Sidebar = () => {
                             <i className="bi bi-plus"></i>
                         </button>
                     </div>
-                    <ul className="nav-list">
+                    <ul className="nav-list list-unstyled">
                         <li className="nav-item">
                             <a href="#" className="nav-link">
                                 <span className="label-dot" style={{backgroundColor: '#4285f4'}}></span>
@@ -130,7 +135,7 @@ const Sidebar = () => {
                 </div>
 
                 {/* Storage Info */}
-                <div className="storage-info">
+                <div className="storage-info pb-3">
                     <div className="storage-bar">
                         <div className="storage-used" style={{width: '65%'}}></div>
                     </div>

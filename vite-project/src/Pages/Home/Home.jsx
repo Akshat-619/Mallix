@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import Logo from '../../assets/logo_icon.png'
 import Sidebar from '../../Components/Sidebar/Sidebar'
+import EmailSection from '../../Components/EmailSection/EmailSection'
 import './Home.scss'
 
 const Home = () => {
@@ -10,11 +11,122 @@ const Home = () => {
     const [showAppsDrawer, setShowAppsDrawer] = useState(false)
     const [showProfileDrawer, setShowProfileDrawer] = useState(false)
     const [showMobileMenu, setShowMobileMenu] = useState(false)
+    const [showComposeModal, setShowComposeModal] = useState(false)
+    
+    // Compose panel state
+    const [composeData, setComposeData] = useState({
+        recipients: '',
+        subject: '',
+        message: ''
+    })
+    
+    const [composeErrors, setComposeErrors] = useState({
+        recipients: '',
+        subject: '',
+        message: ''
+    })
+    
+    const [showSubjectConfirm, setShowSubjectConfirm] = useState(false)
+    
     const supportDropdownRef = useRef(null)
     const alexaDropdownRef = useRef(null)
     const settingsDropdownRef = useRef(null)
     const appsDropdownRef = useRef(null)
     const profileDropdownRef = useRef(null)
+
+    // Compose panel handlers
+    const handleComposeChange = (field, value) => {
+        setComposeData(prev => ({
+            ...prev,
+            [field]: value
+        }))
+        
+        // Clear error for this field when user starts typing
+        if (value.trim()) {
+            setComposeErrors(prev => ({
+                ...prev,
+                [field]: ''
+            }))
+        }
+    }
+    
+    const handleSendEmail = () => {
+        // Reset errors
+        setComposeErrors({
+            recipients: '',
+            subject: '',
+            message: ''
+        })
+        
+        // Check if recipients is empty
+        if (!composeData.recipients.trim()) {
+            alert('Fill the fields')
+            setComposeErrors(prev => ({
+                ...prev,
+                recipients: 'Enter the receiver email'
+            }))
+            return
+        }
+        
+        // Check if message is empty
+        if (!composeData.message.trim()) {
+            alert('Fill the fields')
+            setComposeErrors(prev => ({
+                ...prev,
+                message: 'Cant send with body empty'
+            }))
+            return
+        }
+        
+        // Basic email validation
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+        const emails = composeData.recipients.split(',').map(email => email.trim())
+        const validEmails = emails.every(email => emailRegex.test(email))
+        
+        if (!validEmails) {
+            setComposeErrors(prev => ({
+                ...prev,
+                recipients: 'Enter valid email addresses (e.g., user@gmail.com)'
+            }))
+            return
+        }
+        
+        // Check if subject is empty and show confirmation
+        if (!composeData.subject.trim()) {
+            setComposeErrors(prev => ({
+                ...prev,
+                subject: 'Subject field has not been filled'
+            }))
+            return
+        }
+        
+        // Send email
+        sendEmail()
+    }
+    
+    const sendEmail = () => {
+        // Simulate sending email
+        console.log('Sending email:', composeData)
+        alert('Email sent successfully!')
+        
+        // Reset form and close panel
+        setComposeData({
+            recipients: '',
+            subject: '',
+            message: ''
+        })
+        setComposeErrors({
+            recipients: '',
+            subject: '',
+            message: ''
+        })
+        setShowComposeModal(false)
+        setShowSubjectConfirm(false)
+    }
+    
+    const handleMinimizePanel = () => {
+        setShowComposeModal(false)
+    }
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -44,75 +156,79 @@ const Home = () => {
 
     return (
         <div className="Home">
-            <Sidebar />
+            <section className="Topbar d-flex align-items-center">
+            
+            <div className="d-flex align-items-center">
+                <div className="logo">
+                    <img src={Logo} alt="Logo" />
+                </div>
+                <div className="logoName">
+                    Mallix
+                </div>
+            </div>
+
+            <div className="input-group flex-nowrap mx-auto d-none d-md-flex">
+                <input type="text" className="form-control" placeholder="Search" aria-label="Search" />
+                <span className="input-group-text"><i className="bi bi-search"></i></span>
+            </div>
+              
+              <div className="Topbar-icons d-none d-md-flex">
+                <button
+                    className="btn btn-link p-0"
+                    type="button"
+                    onClick={() => setShowSupportDrawer(!showSupportDrawer)}
+                >
+                    <i className="bi bi-question-circle-fill" data-tooltip="Support"></i>
+                </button>
+                <button
+                    className="btn btn-link p-0"
+                    type="button"
+                    onClick={() => setShowSettingsDrawer(!showSettingsDrawer)}
+                >
+                    <i className="bi bi-gear-fill" data-tooltip="Settings"></i>
+                </button>
+                <button
+                    className="btn btn-link p-0"
+                    type="button"
+                    onClick={() => setShowAlexaDrawer(!showAlexaDrawer)}
+                >
+                    <div className="alexa-wrapper" data-tooltip="Try Alexa">
+                        <i className="bi bi-alexa"></i>
+                    </div>
+                </button>
+                <button
+                    className="btn btn-link p-0"
+                    type="button"
+                    onClick={() => setShowAppsDrawer(!showAppsDrawer)}
+                >
+                    <i className="bi bi-grid-3x3-gap-fill" data-tooltip="Mallix Apps"></i>
+                </button>
+                <button
+                    className="btn btn-link p-0"
+                    type="button"
+                    onClick={() => setShowProfileDrawer(!showProfileDrawer)}
+                >
+                    <i className="bi bi-person-circle" data-tooltip="Profile"></i>
+                </button>
+              </div>
+
+              {/* Mobile Hamburger Menu */}
+              <div className="d-md-none">
+                <button
+                    className="btn btn-link p-0 mobile-hamburger"
+                    type="button"
+                    onClick={() => setShowMobileMenu(!showMobileMenu)}
+                >
+                    <i className="bi bi-list"></i>
+                </button>
+              </div>
+         </section>
+
             <main className="main-content">
-                <section className="Topbar d-flex align-items-center">
-                
-                <div className="d-flex align-items-center">
-                    <div className="logo">
-                        <img src={Logo} alt="Logo" />
-                    </div>
-                    <div className="logoName">
-                        Mallix
-                    </div>
+                <div className="content-wrapper">
+                    <Sidebar onComposeClick={() => setShowComposeModal(true)} />
+                    <EmailSection />
                 </div>
-
-                <div className="input-group flex-nowrap mx-auto d-none d-md-flex">
-                    <input type="text" className="form-control" placeholder="Search" aria-label="Search" />
-                    <span className="input-group-text"><i className="bi bi-search"></i></span>
-                </div>
-                  
-                  <div className="Topbar-icons d-none d-md-flex">
-                    <button
-                        className="btn btn-link p-0"
-                        type="button"
-                        onClick={() => setShowSupportDrawer(!showSupportDrawer)}
-                    >
-                        <i className="bi bi-question-circle-fill" data-tooltip="Support"></i>
-                    </button>
-                    <button
-                        className="btn btn-link p-0"
-                        type="button"
-                        onClick={() => setShowSettingsDrawer(!showSettingsDrawer)}
-                    >
-                        <i className="bi bi-gear-fill" data-tooltip="Settings"></i>
-                    </button>
-                    <button
-                        className="btn btn-link p-0"
-                        type="button"
-                        onClick={() => setShowAlexaDrawer(!showAlexaDrawer)}
-                    >
-                        <div className="alexa-wrapper" data-tooltip="Try Alexa">
-                            <i className="bi bi-alexa"></i>
-                        </div>
-                    </button>
-                    <button
-                        className="btn btn-link p-0"
-                        type="button"
-                        onClick={() => setShowAppsDrawer(!showAppsDrawer)}
-                    >
-                        <i className="bi bi-grid-3x3-gap-fill" data-tooltip="Mallix Apps"></i>
-                    </button>
-                    <button
-                        className="btn btn-link p-0"
-                        type="button"
-                        onClick={() => setShowProfileDrawer(!showProfileDrawer)}
-                    >
-                        <i className="bi bi-person-circle" data-tooltip="Profile"></i>
-                    </button>
-                  </div>
-
-                  {/* Mobile Hamburger Menu */}
-                  <div className="d-md-none">
-                    <button
-                        className="btn btn-link p-0 mobile-hamburger"
-                        type="button"
-                        onClick={() => setShowMobileMenu(!showMobileMenu)}
-                    >
-                        <i className="bi bi-list"></i>
-                    </button>
-                  </div>
-             </section>
 
             {/* Mobile Menu Dropdown */}
             <div className={`mobile-menu-dropdown ${showMobileMenu ? 'show' : ''}`} onClick={(e) => {
@@ -627,6 +743,92 @@ const Home = () => {
                     setShowAppsDrawer(false)
                     setShowProfileDrawer(false)
                 }}></div>
+            )}
+
+            {/* Compose Panel */}
+            <div className={`compose-panel ${showComposeModal ? 'show' : ''}`}>
+                <div className="compose-panel-header">
+                    <h6 className="compose-panel-title">New Message</h6>
+                    <div className="compose-panel-controls">
+                        <button type="button" className="panel-btn minimize-btn" onClick={handleMinimizePanel}>
+                            <i className="bi bi-dash"></i>
+                        </button>
+                        <button type="button" className="panel-btn close-btn" onClick={() => setShowComposeModal(false)}>
+                            <i className="bi bi-x"></i>
+                        </button>
+                    </div>
+                </div>
+                <div className="compose-panel-body">
+                    <div className="compose-field">
+                        <input 
+                            type="email" 
+                            className="compose-input" 
+                            placeholder="Recipients"
+                            value={composeData.recipients}
+                            onChange={(e) => handleComposeChange('recipients', e.target.value)}
+                        />
+                        {composeErrors.recipients && (
+                            <div className="compose-error">{composeErrors.recipients}</div>
+                        )}
+                    </div>
+                    <div className="compose-field">
+                        <input 
+                            type="text" 
+                            className="compose-input" 
+                            placeholder="Subject"
+                            value={composeData.subject}
+                            onChange={(e) => handleComposeChange('subject', e.target.value)}
+                        />
+                        {composeErrors.subject && (
+                            <div className="compose-error">{composeErrors.subject}</div>
+                        )}
+                    </div>
+                    <div className="compose-field">
+                        <textarea 
+                            className="compose-textarea" 
+                            placeholder="Compose email" 
+                            rows="12"
+                            value={composeData.message}
+                            onChange={(e) => handleComposeChange('message', e.target.value)}
+                        ></textarea>
+                        {composeErrors.message && (
+                            <div className="compose-error">{composeErrors.message}</div>
+                        )}
+                    </div>
+                </div>
+                <div className="compose-panel-footer">
+                    <button type="button" className="send-btn" onClick={handleSendEmail}>
+                        <i className="bi bi-send"></i>
+                        Send
+                    </button>
+                </div>
+            </div>
+            
+            {/* Subject Confirmation Popup */}
+            {showSubjectConfirm && (
+                <div className="subject-confirm-overlay">
+                    <div className="subject-confirm-popup">
+                        <div className="confirm-content">
+                            <h6>Are you sure you want to continue without subject?</h6>
+                            <div className="confirm-buttons">
+                                <button 
+                                    type="button" 
+                                    className="confirm-btn yes-btn" 
+                                    onClick={sendEmail}
+                                >
+                                    Yes
+                                </button>
+                                <button 
+                                    type="button" 
+                                    className="confirm-btn no-btn" 
+                                    onClick={() => setShowSubjectConfirm(false)}
+                                >
+                                    No
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             )}
             </main>
         </div>

@@ -129,6 +129,18 @@ $border: #2e3835;
 $border-light: #222a28;
 
 /* =====================
+   GLASS-MORPHISM & OVERLAYS
+   ===================== */
+$glass-light: rgba(255, 255, 255, 0.05);
+$glass-medium: rgba(255, 255, 255, 0.1);
+$glass-heavy: rgba(255, 255, 255, 0.15);
+$glass-border: rgba(255, 255, 255, 0.08);
+$glass-border-hover: rgba(255, 255, 255, 0.15);
+$glass-border-active: rgba(255, 255, 255, 0.2);
+$glass-border-strong: rgba(255, 255, 255, 0.25);
+$glass-border-strongest: rgba(255, 255, 255, 0.3);
+
+/* =====================
    SHADOWS (ELEVATION)
    ===================== */
 $shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
