@@ -16,6 +16,13 @@ const Login = () => {
       return
     }
 
+    // Email validation
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+    if (!emailRegex.test(email.trim())) {
+      setError('Enter valid email address (e.g., user@gmail.com)')
+      return
+    }
+
     setError('')
     // Navigate to password page with email state
     navigate('/password', { state: { email } })
