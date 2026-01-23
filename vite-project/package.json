@@ -11,6 +11,9 @@
     "deploy": "npm run build && gh-pages -d dist"
   },
   "dependencies": {
+    "@ckeditor/ckeditor5-build-classic": "^41.4.2",
+    "@ckeditor/ckeditor5-build-decoupled-document": "^41.4.2",
+    "@ckeditor/ckeditor5-react": "^11.0.1",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.10.3",
     "react": "^19.2.0",

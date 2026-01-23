@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react'
-import Logo from '../../assets/logo_icon.png'
-import Sidebar from '../../Components/Sidebar/Sidebar'
-import EmailSection from '../../Components/EmailSection/EmailSection'
-import './Home.scss'
+import React, { useState, useRef, useEffect } from 'react';
+import Sidebar from '../../Components/Sidebar/Sidebar';
+import EmailSection from '../../Components/EmailSection/EmailSection';
+import Logo from '../../assets/logo_icon.png';
+import './Home.scss';
 
 const Home = () => {
     const [showSupportDrawer, setShowSupportDrawer] = useState(false)
@@ -27,6 +27,7 @@ const Home = () => {
     })
     
     const [showSubjectConfirm, setShowSubjectConfirm] = useState(false)
+    const [customAlert, setCustomAlert] = useState({ show: false, message: '', type: 'error' })
     
     const supportDropdownRef = useRef(null)
     const alexaDropdownRef = useRef(null)
@@ -35,6 +36,13 @@ const Home = () => {
     const profileDropdownRef = useRef(null)
 
     // Compose panel handlers
+    const showCustomAlert = (message, type = 'error') => {
+        setCustomAlert({ show: true, message, type })
+        setTimeout(() => {
+            setCustomAlert({ show: false, message: '', type: 'error' })
+        }, 3000)
+    }
+
     const handleComposeChange = (field, value) => {
         setComposeData(prev => ({
             ...prev,
@@ -48,6 +56,35 @@ const Home = () => {
                 [field]: ''
             }))
         }
+        
+        // Real-time email validation for recipients field
+        if (field === 'recipients') {
+            // Clear error if field is empty
+            if (!value.trim()) {
+                setComposeErrors(prev => ({
+                    ...prev,
+                    recipients: ''
+                }))
+                return
+            }
+            
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+            const emails = value.split(',').map(email => email.trim())
+            
+            // Check for invalid emails
+            const invalidEmails = emails.filter(email => email && !emailRegex.test(email))
+            if (invalidEmails.length > 0) {
+                setComposeErrors(prev => ({
+                    ...prev,
+                    recipients: `Invalid: ${invalidEmails.join(', ')}`
+                }))
+            } else {
+                setComposeErrors(prev => ({
+                    ...prev,
+                    recipients: ''
+                }))
+            }
+        }
     }
     
     const handleSendEmail = () => {
@@ -60,7 +97,7 @@ const Home = () => {
         
         // Check if recipients is empty
         if (!composeData.recipients.trim()) {
-            alert('Fill the fields')
+            showCustomAlert('Please fill in all required fields')
             setComposeErrors(prev => ({
                 ...prev,
                 recipients: 'Enter the receiver email'
@@ -70,7 +107,7 @@ const Home = () => {
         
         // Check if message is empty
         if (!composeData.message.trim()) {
-            alert('Fill the fields')
+            showCustomAlert('Please fill in all required fields')
             setComposeErrors(prev => ({
                 ...prev,
                 message: 'Cant send with body empty'
@@ -78,25 +115,57 @@ const Home = () => {
             return
         }
         
-        // Basic email validation
+        // Enhanced email validation
         const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
         const emails = composeData.recipients.split(',').map(email => email.trim())
         const validEmails = emails.every(email => emailRegex.test(email))
         
-        if (!validEmails) {
+        // Check for empty emails
+        const emptyEmails = emails.filter(email => !email)
+        if (emptyEmails.length > 0) {
+            showCustomAlert('Please remove empty email addresses')
             setComposeErrors(prev => ({
                 ...prev,
-                recipients: 'Enter valid email addresses (e.g., user@gmail.com)'
+                recipients: 'Empty email addresses found'
+            }))
+            return
+        }
+        
+        // Check for invalid emails
+        const invalidEmails = emails.filter(email => !emailRegex.test(email))
+        if (invalidEmails.length > 0) {
+            showCustomAlert(`Invalid email format: ${invalidEmails.join(', ')}`)
+            setComposeErrors(prev => ({
+                ...prev,
+                recipients: `Invalid emails: ${invalidEmails.join(', ')}`
+            }))
+            return
+        }
+        
+        // Check for duplicate emails
+        const uniqueEmails = [...new Set(emails)]
+        if (uniqueEmails.length !== emails.length) {
+            showCustomAlert('Duplicate email addresses detected')
+            setComposeErrors(prev => ({
+                ...prev,
+                recipients: 'Remove duplicate email addresses'
+            }))
+            return
+        }
+        
+        // Limit number of recipients
+        if (emails.length > 10) {
+            showCustomAlert('Maximum 10 recipients allowed')
+            setComposeErrors(prev => ({
+                ...prev,
+                recipients: 'Too many recipients (max 10)'
             }))
             return
         }
         
         // Check if subject is empty and show confirmation
         if (!composeData.subject.trim()) {
-            setComposeErrors(prev => ({
-                ...prev,
-                subject: 'Subject field has not been filled'
-            }))
+            setShowSubjectConfirm(true)
             return
         }
         
@@ -107,7 +176,7 @@ const Home = () => {
     const sendEmail = () => {
         // Simulate sending email
         console.log('Sending email:', composeData)
-        alert('Email sent successfully!')
+        showCustomAlert('Email sent successfully!', 'success')
         
         // Reset form and close panel
         setComposeData({
@@ -747,86 +816,96 @@ const Home = () => {
 
             {/* Compose Panel */}
             <div className={`compose-panel ${showComposeModal ? 'show' : ''}`}>
-                <div className="compose-panel-header">
-                    <h6 className="compose-panel-title">New Message</h6>
-                    <div className="compose-panel-controls">
-                        <button type="button" className="panel-btn minimize-btn" onClick={handleMinimizePanel}>
-                            <i className="bi bi-dash"></i>
+                <div className="compose-panel-content">
+                    <div className="compose-panel-header">
+                        <h6 className="compose-panel-title">New Message</h6>
+                        <div className="compose-panel-controls">
+                            <button type="button" className="panel-btn minimize-btn" onClick={handleMinimizePanel}>
+                                <i className="bi bi-dash"></i>
+                            </button>
+                            <button type="button" className="panel-btn close-btn" onClick={() => setShowComposeModal(false)}>
+                                <i className="bi bi-x"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div className="compose-panel-body">
+                        <div className="compose-field">
+                            <input 
+                                type="email" 
+                                className="compose-input" 
+                                placeholder="Recipients"
+                                value={composeData.recipients}
+                                onChange={(e) => handleComposeChange('recipients', e.target.value)}
+                            />
+                            {composeErrors.recipients && (
+                                <div className="compose-error">{composeErrors.recipients}</div>
+                            )}
+                        </div>
+                        <div className="compose-field">
+                            <input 
+                                type="text" 
+                                className="compose-input" 
+                                placeholder="Subject"
+                                value={composeData.subject}
+                                onChange={(e) => handleComposeChange('subject', e.target.value)}
+                            />
+                            {composeErrors.subject && (
+                                <div className="compose-error">{composeErrors.subject}</div>
+                            )}
+                        </div>
+                        <div className="compose-field">
+                            <textarea 
+                                className="compose-textarea" 
+                                placeholder="Compose email" 
+                                rows="12"
+                                value={composeData.message}
+                                onChange={(e) => handleComposeChange('message', e.target.value)}
+                            ></textarea>
+                            {composeErrors.message && (
+                                <div className="compose-error">{composeErrors.message}</div>
+                            )}
+                        </div>
+                    </div>
+                    <div className="compose-panel-footer">
+                        <button type="button" className="send-btn" onClick={handleSendEmail}>
+                            <i className="bi bi-send"></i>
+                            Send
                         </button>
-                        <button type="button" className="panel-btn close-btn" onClick={() => setShowComposeModal(false)}>
-                            <i className="bi bi-x"></i>
-                        </button>
-                    </div>
-                </div>
-                <div className="compose-panel-body">
-                    <div className="compose-field">
-                        <input 
-                            type="email" 
-                            className="compose-input" 
-                            placeholder="Recipients"
-                            value={composeData.recipients}
-                            onChange={(e) => handleComposeChange('recipients', e.target.value)}
-                        />
-                        {composeErrors.recipients && (
-                            <div className="compose-error">{composeErrors.recipients}</div>
+                        
+                        {/* Subject Confirmation Popup */}
+                        {showSubjectConfirm && (
+                            <div className="subject-confirm-popup">
+                                <div className="confirm-content">
+                                    <h6>Continue without subject?</h6>
+                                    <p>Your email will be sent without a subject line.</p>
+                                    <div className="confirm-buttons">
+                                        <button 
+                                            type="button" 
+                                            className="confirm-btn yes-btn" 
+                                            onClick={sendEmail}
+                                        >
+                                            Send Anyway
+                                        </button>
+                                        <button 
+                                            type="button" 
+                                            className="confirm-btn no-btn" 
+                                            onClick={() => setShowSubjectConfirm(false)}
+                                        >
+                                            Add Subject
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
                         )}
                     </div>
-                    <div className="compose-field">
-                        <input 
-                            type="text" 
-                            className="compose-input" 
-                            placeholder="Subject"
-                            value={composeData.subject}
-                            onChange={(e) => handleComposeChange('subject', e.target.value)}
-                        />
-                        {composeErrors.subject && (
-                            <div className="compose-error">{composeErrors.subject}</div>
-                        )}
-                    </div>
-                    <div className="compose-field">
-                        <textarea 
-                            className="compose-textarea" 
-                            placeholder="Compose email" 
-                            rows="12"
-                            value={composeData.message}
-                            onChange={(e) => handleComposeChange('message', e.target.value)}
-                        ></textarea>
-                        {composeErrors.message && (
-                            <div className="compose-error">{composeErrors.message}</div>
-                        )}
-                    </div>
-                </div>
-                <div className="compose-panel-footer">
-                    <button type="button" className="send-btn" onClick={handleSendEmail}>
-                        <i className="bi bi-send"></i>
-                        Send
-                    </button>
                 </div>
             </div>
-            
-            {/* Subject Confirmation Popup */}
-            {showSubjectConfirm && (
-                <div className="subject-confirm-overlay">
-                    <div className="subject-confirm-popup">
-                        <div className="confirm-content">
-                            <h6>Are you sure you want to continue without subject?</h6>
-                            <div className="confirm-buttons">
-                                <button 
-                                    type="button" 
-                                    className="confirm-btn yes-btn" 
-                                    onClick={sendEmail}
-                                >
-                                    Yes
-                                </button>
-                                <button 
-                                    type="button" 
-                                    className="confirm-btn no-btn" 
-                                    onClick={() => setShowSubjectConfirm(false)}
-                                >
-                                    No
-                                </button>
-                            </div>
-                        </div>
+            {/* Custom Alert */}
+            {customAlert.show && (
+                <div className={`custom-alert ${customAlert.type}`}>
+                    <div className="alert-content">
+                        <i className={`bi ${customAlert.type === 'success' ? 'bi-check-circle' : 'bi-exclamation-triangle'}`}></i>
+                        <span>{customAlert.message}</span>
                     </div>
                 </div>
             )}

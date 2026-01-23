@@ -10,7 +10,7 @@ export default defineConfig({
       },
     }),
   ],
-  base: '/Mallix/', // ✅ FIXED
+  base: '/', // ✅ FIXED
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
