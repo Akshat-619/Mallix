@@ -120,6 +120,8 @@
     border: 1px solid rgba(255, 255, 255, 0.05);
     position: relative;
     backdrop-filter: blur(1px);
+    text-decoration: none;
+    color: inherit;
     
     &::before {
       content: '';

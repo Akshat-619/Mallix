@@ -284,11 +284,10 @@ const Home = () => {
               {/* Mobile Hamburger Menu */}
               <div className="d-md-none">
                 <button
-                    className="btn btn-link p-0 mobile-hamburger"
-                    type="button"
+                    className="mobile-hamburger"
                     onClick={() => setShowMobileMenu(!showMobileMenu)}
                 >
-                    <i className="bi bi-list"></i>
+                  <i className={`bi ${showMobileMenu ? 'bi-x' : 'bi-list'}`}></i>
                 </button>
               </div>
          </section>

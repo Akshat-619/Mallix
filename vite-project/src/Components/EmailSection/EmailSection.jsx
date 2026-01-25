@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './EmailSection.scss';
 
 // Fake email data
@@ -345,7 +346,7 @@ const EmailSection = () => {
       
       <div className="email-list ">
         {EMAIL_DATA.map((email) => (
-          <div key={email.id} className={`email-item ${!email.isRead ? 'unread' : ''}`}>
+          <Link key={email.id} to={`/email/${email.id}`} className={`email-item ${!email.isRead ? 'unread' : ''}`}>
             <div className="email-avatar" style={{ backgroundColor: email.avatarColor }}>
               <span className="avatar-text">{email.avatar}</span>
             </div>
@@ -369,7 +370,7 @@ const EmailSection = () => {
               <div className="email-subject">{email.subject}</div>
               <div className="email-preview">{email.preview}</div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

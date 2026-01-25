@@ -179,6 +179,8 @@
   position: relative;
   -webkit-backdrop-filter: blur(1px);
           backdrop-filter: blur(1px);
+  text-decoration: none;
+  color: inherit;
 }
 .email-section .email-item::before {
   content: "";
